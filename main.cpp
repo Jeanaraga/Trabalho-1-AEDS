@@ -1,21 +1,19 @@
 #include "src/Floresta.hpp"
+#include "src/PropagacaoFogo.hpp"
 #include <iostream>
+using namespace std;
 
 int main() {
     Floresta floresta;
 
-    if (!floresta.carregarDeArquivo("input.dat")) {
-        std::cerr << "Erro ao carregar a floresta." << std::endl;
+    if (!floresta.carregarDeArquivo("src/input.dat")) {
+        cerr << "Erro ao carregar a floresta." << endl;
         return 1;
     }
 
-    std::cout << "Matriz inicial:\n";
-    floresta.imprimir();
+    // Se desejar, pode imprimir a matriz inicial no arquivo também
+    floresta.atualizarESalvar(5, "src/output.dat");
 
-    floresta.atualizar();
-
-    std::cout << "\nMatriz após 1 atualização:\n";
-    floresta.imprimir();
-
+    cout << "Simulação finalizada! Verifique o arquivo output.dat para a saída completa." << endl;
     return 0;
 }

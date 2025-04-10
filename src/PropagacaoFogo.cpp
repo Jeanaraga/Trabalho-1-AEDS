@@ -1,0 +1,40 @@
+#include "PropagacaoFogo.hpp"
+#include <iostream>
+#include <string>
+using namespace std;
+
+void PropagacaoFogo::propagarFogo(vector<vector<int>>& matriz, int linhas, int colunas, ostream& os) {
+    // Cria uma nova matriz para registrar as atualizações sem interferir na iteração atual
+    vector<vector<int>> novaMatriz = matriz;
+
+    for (int i = 0; i < linhas; i++) {
+        for (int j = 0; j < colunas; j++) {
+            if (matriz[i][j] == 2) { // célula em chamas
+                // A célula em chamas passa a ser queimada
+                novaMatriz[i][j] = 3;
+                os << "Elemento (" << i << "," << j << ") virou 3 (queimado)\n";
+
+                // Verifica os vizinhos ortogonais e atualiza os que são árvores saudáveis (valor 1)
+                if (i > 0 && matriz[i - 1][j] == 1) {
+                    novaMatriz[i - 1][j] = 2;
+                    os << "Elemento (" << i - 1 << "," << j << ") virou 2 (fogo) [direção: abaixo]\n";
+                }
+                if (i < linhas - 1 && matriz[i + 1][j] == 1) {
+                    novaMatriz[i + 1][j] = 2;
+                    os << "Elemento (" << i + 1 << "," << j << ") virou 2 (fogo) [direção: acima]\n";
+                }
+                if (j > 0 && matriz[i][j - 1] == 1) {
+                    novaMatriz[i][j - 1] = 2;
+                    os << "Elemento (" << i << "," << j - 1 << ") virou 2 (fogo) [direção: direita]\n";
+                }
+                if (j < colunas - 1 && matriz[i][j + 1] == 1) {
+                    novaMatriz[i][j + 1] = 2;
+                    os << "Elemento (" << i << "," << j + 1 << ") virou 2 (fogo) [direção: esquerda]\n";
+                }
+            }
+        }
+    }
+
+    // Atualiza a matriz original com as mudanças da nova matriz
+    matriz = novaMatriz;
+}

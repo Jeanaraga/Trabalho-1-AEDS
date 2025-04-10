@@ -1,23 +1,26 @@
 #include "Floresta.hpp"
+#include "PropagacaoFogo.hpp"
 #include <fstream>
 #include <iostream>
+#include <string>
+using namespace std;
 
 Floresta::Floresta() {
     linhas = 0;
     colunas = 0;
 }
 
-bool Floresta::carregarDeArquivo(const std::string& nomeArquivo) {
-    std::ifstream arquivo(nomeArquivo);
+bool Floresta::carregarDeArquivo(const string& nomeArquivo) {
+    ifstream arquivo(nomeArquivo);
     if (!arquivo.is_open()) {
-        std::cerr << "Erro ao abrir o arquivo " << nomeArquivo << std::endl;
+        cerr << "Erro ao abrir o arquivo " << nomeArquivo << endl;
         return false;
     }
 
     int fogoLinha, fogoColuna;
     arquivo >> linhas >> colunas >> fogoLinha >> fogoColuna;
 
-    matriz.resize(linhas, std::vector<int>(colunas));
+    matriz.resize(linhas, vector<int>(colunas));
 
     for (int i = 0; i < linhas; i++) {
         for (int j = 0; j < colunas; j++) {
@@ -25,42 +28,52 @@ bool Floresta::carregarDeArquivo(const std::string& nomeArquivo) {
         }
     }
 
-    // Coloca o início do fogo
+    // Coloca o início do fogo na posição informada
     matriz[fogoLinha][fogoColuna] = 2;
 
     arquivo.close();
     return true;
 }
 
-void Floresta::atualizar() {
-    std::vector<std::vector<int>> novaMatriz = matriz;
-
-    for (int i = 0; i < linhas; i++) {
-        for (int j = 0; j < colunas; j++) {
-            if (matriz[i][j] == 2) { // Em chamas
-                novaMatriz[i][j] = 3; // Vira queimada
-
-                // Verifica vizinhos ortogonais
-                if (i > 0 && matriz[i - 1][j] == 1) novaMatriz[i - 1][j] = 2;
-                if (i < linhas - 1 && matriz[i + 1][j] == 1) novaMatriz[i + 1][j] = 2;
-                if (j > 0 && matriz[i][j - 1] == 1) novaMatriz[i][j - 1] = 2;
-                if (j < colunas - 1 && matriz[i][j + 1] == 1) novaMatriz[i][j + 1] = 2;
-            }
-        }
-    }
-
-    matriz = novaMatriz;
+void Floresta::imprimirMatriz() const {
+    imprimirMatriz(cout);
 }
 
-void Floresta::imprimir() {
+void Floresta::imprimirMatriz(ostream& os) const {
     for (const auto& linha : matriz) {
         for (int celula : linha) {
-            std::cout << celula << " ";
+            os << celula << " ";
         }
-        std::cout << std::endl;
+        os << "\n";
     }
 }
 
-std::vector<std::vector<int>> Floresta::getMatriz() const {
+vector<vector<int>> Floresta::getMatriz() const {
     return matriz;
+}
+
+void Floresta::atualizarESalvar(int iteracoes, const string& nomeArquivo) {
+    ofstream arq(nomeArquivo);
+    if (!arq.is_open()) {
+        cerr << "Erro ao abrir o arquivo " << nomeArquivo << " para gravação." << endl;
+        return;
+    }
+
+    for (int k = 0; k < iteracoes; ++k) {
+        //
+        
+        string cabecalho = "\n--- Iteração " + to_string(k + 1) + " ---\n";
+        arq << cabecalho;  
+
+        // Chama o método estático para propagar o fogo
+        PropagacaoFogo::propagarFogo(matriz, linhas, colunas, arq);
+
+        string matMsg = "\nMatriz após Iteração " + to_string(k + 1) + ":\n";
+        arq << matMsg;
+        
+        imprimirMatriz(arq);
+        arq << "\n"; // separador entre iterações
+    }
+
+    arq.close();
 }

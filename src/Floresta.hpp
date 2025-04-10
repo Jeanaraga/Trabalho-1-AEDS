@@ -1,18 +1,25 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <ostream>
+using namespace std;
 
 class Floresta {
 private:
     int linhas, colunas;
-    std::vector<std::vector<int>> matriz;
+    vector<vector<int>> matriz;
 
 public:
-    Floresta(); // Construtor padrão
+    Floresta();
 
-    bool carregarDeArquivo(const std::string& nomeArquivo);
-    void atualizar();
+    bool carregarDeArquivo(const string& nomeArquivo);
 
-    void imprimir(); // apenas para debug
-    std::vector<std::vector<int>> getMatriz() const;
+    // Métodos de impressão
+    void imprimirMatriz() const;
+    void imprimirMatriz(ostream& os) const;
+    
+    vector<vector<int>> getMatriz() const;
+
+    // Método para atualizar a matriz e salvar em um arquivo
+    void atualizarESalvar(int iteracoes, const string& nomeArquivo);
 };
