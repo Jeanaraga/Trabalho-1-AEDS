@@ -1,5 +1,6 @@
 #include "src/Floresta.hpp"
 #include "src/PropagacaoFogo.hpp"
+#include "src/config.hpp"
 #include <iostream>
 using namespace std;
 
@@ -12,7 +13,7 @@ int main() {
     }
 
     // Se desejar, pode imprimir a matriz inicial no arquivo também
-    floresta.atualizarESalvar(5, "src/output.dat");
+    floresta.atualizarESalvar(NUMERO_ITERACOES,DIRECAO_VENTO, "src/output.dat");
 
     cout << "Simulação finalizada! Verifique o arquivo output.dat para a saída completa." << endl;
     return 0;

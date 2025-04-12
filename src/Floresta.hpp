@@ -21,5 +21,8 @@ public:
     vector<vector<int>> getMatriz() const;
 
     // Método para atualizar a matriz e salvar em um arquivo
-    void atualizarESalvar(int iteracoes, const string& nomeArquivo);
+    void atualizarESalvar(int iteracoes, char direcao, const string& nomeArquivo);
+
+    // Método para verificar se ainda há fogo na floresta
+    bool temFogo() const;
 };

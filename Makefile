@@ -1,42 +1,41 @@
-CXX      := g++                 
-CXXFLAGS := -Wall -Wextra -Werror
-LDFLAGS  := -lm                 
-BUILD    := ./build
-OBJ_DIR  := $(BUILD)/objects
-APP_DIR  := $(BUILD)/
-TARGET   := app
-INCLUDE  := -Iinclude/
-SRC      := $(wildcard src/*.cpp) 
+# Compilador e flags
+CXX := g++
+CXXFLAGS := -Wall -Wextra -std=c++17
 
-OBJECTS := $(SRC:src/%.cpp=$(OBJ_DIR)/src/%.o)
+# Pastas
+SRC_DIR := src
+BUILD_DIR := build
+OBJ_DIR := $(BUILD_DIR)/objects
+APP := $(BUILD_DIR)/app
 
+# Arquivos fonte
+SRCS := $(wildcard $(SRC_DIR)/*.cpp) main.cpp
+OBJS := $(SRCS:.cpp=.o)
+OBJS := $(patsubst %.o,$(OBJ_DIR)/%.o,$(notdir $(OBJS)))
 
-all: build $(APP_DIR)/$(TARGET)
+# Regra principal
+all: $(APP)
 
-$(OBJ_DIR)/src/%.o: src/%.cpp
-	@mkdir -p $(@D)
-	$(CXX) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
+# Compila o app
+$(APP): $(OBJS)
+	@mkdir -p $(BUILD_DIR)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
-
-$(APP_DIR)/$(TARGET): $(OBJECTS)
-	@mkdir -p $(@D)
-	$(CXX) $(CXXFLAGS) $(INCLUDE) $(LDFLAGS) -o $(APP_DIR)/$(TARGET) $(OBJECTS)
-
-.PHONY: all build clean debug release run
-
-build:
-	@mkdir -p $(APP_DIR)
+# Compila cada .cpp
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-debug: CXXFLAGS += -DDEBUG -g
-debug: all
+$(OBJ_DIR)/main.o: main.cpp
+	@mkdir -p $(OBJ_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-release: CXXFLAGS += -O3
-release: all
-
+# Limpeza
 clean:
-	-@rm -rvf $(OBJ_DIR)/*
-	-@rm -rvf $(APP_DIR)/*
+	rm -rf $(BUILD_DIR)
 
-run:
-	./$(BUILD)/$(TARGET)
+# Rodar o app
+run: all
+	./$(APP)
+
+.PHONY: all clean run

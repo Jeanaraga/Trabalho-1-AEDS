@@ -48,16 +48,34 @@ void Floresta::imprimirMatriz(ostream& os) const {
     }
 }
 
+bool Floresta::temFogo() const {
+    for (const auto& linha : matriz) {
+        for (int celula : linha) {
+            if (celula == 2) { // Se houver fogo
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 vector<vector<int>> Floresta::getMatriz() const {
     return matriz;
 }
 
-void Floresta::atualizarESalvar(int iteracoes, const string& nomeArquivo) {
+void Floresta::atualizarESalvar(int iteracoes,char direcao, const string& nomeArquivo) {
     ofstream arq(nomeArquivo);
     if (!arq.is_open()) {
         cerr << "Erro ao abrir o arquivo " << nomeArquivo << " para gravação." << endl;
         return;
     }
+
+    arq << "Matriz inicial:\n";
+    // Imprime a matriz inicial
+    arq << "Linhas: " << linhas << ", Colunas: " << colunas << "\n";
+    arq << "Direção do vento: " << direcao << "\n";
+    imprimirMatriz(arq);
+    arq << "\n"; // separador entre iterações
 
     for (int k = 0; k < iteracoes; ++k) {
         //
@@ -66,13 +84,20 @@ void Floresta::atualizarESalvar(int iteracoes, const string& nomeArquivo) {
         arq << cabecalho;  
 
         // Chama o método estático para propagar o fogo
-        PropagacaoFogo::propagarFogo(matriz, linhas, colunas, arq);
+        PropagacaoFogo::propagarFogo(matriz, linhas, colunas,direcao, arq);
 
-        string matMsg = "\nMatriz após Iteração " + to_string(k + 1) + ":\n";
-        arq << matMsg;
+         string matMsg = "\nMatriz após Iteração " + to_string(k + 1) + ":\n";
+         arq << matMsg;
         
-        imprimirMatriz(arq);
-        arq << "\n"; // separador entre iterações
+         imprimirMatriz(arq);
+         arq << "\n"; // separador entre iterações
+
+        // Verifica se ainda há fogo na floresta
+        if (!temFogo()) {
+            arq << "Não há mais fogo na floresta. Simulação encerrada.\n";
+            break;
+        }
+
     }
 
     arq.close();
