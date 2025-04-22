@@ -2,15 +2,17 @@
 #include <vector>
 #include <string>
 #include <ostream>
+#include "Animal.hpp"
 using namespace std;
 
 class Floresta {
 private:
     int linhas, colunas;
     vector<vector<int>> matriz;
+    Animal animal;
 
 public:
-    Floresta();
+    Floresta(int startX, int startY);
 
     bool carregarDeArquivo(const string& nomeArquivo);
 

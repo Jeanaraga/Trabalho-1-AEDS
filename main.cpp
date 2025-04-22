@@ -1,20 +1,13 @@
 #include "src/Floresta.hpp"
-#include "src/PropagacaoFogo.hpp"
 #include "src/config.hpp"
-#include <iostream>
-using namespace std;
 
 int main() {
-    Floresta floresta;
+    // posição inicial do animal (exemplo: 5,5)
+    Floresta floresta(5, 5);
 
-    if (!floresta.carregarDeArquivo("src/input.dat")) {
-        cerr << "Erro ao carregar a floresta." << endl;
-        return 1;
-    }
+    if (!floresta.carregarDeArquivo("src/input.dat")) return 1;
 
-    // Se desejar, pode imprimir a matriz inicial no arquivo também
-    floresta.atualizarESalvar(NUMERO_ITERACOES,DIRECAO_VENTO, "src/output.dat");
+    floresta.atualizarESalvar(NUMERO_ITERACOES, DIRECAO_VENTO, "src/output.dat");
 
-    cout << "Simulação finalizada! Verifique o arquivo output.dat para a saída completa." << endl;
     return 0;
 }

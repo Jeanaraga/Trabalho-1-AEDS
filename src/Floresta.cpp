@@ -5,7 +5,8 @@
 #include <string>
 using namespace std;
 
-Floresta::Floresta() {
+Floresta::Floresta(int startX, int startY) : animal(startX, startY) {
+
     linhas = 0;
     colunas = 0;
 }
@@ -83,6 +84,27 @@ void Floresta::atualizarESalvar(int iteracoes,char direcao, const string& nomeAr
         string cabecalho = "\n--- Iteração " + to_string(k + 1) + " ---\n";
         arq << cabecalho;  
 
+        animal.mover(matriz, arq);
+
+        // Verifica se o animal está salvo
+        if (animal.estaSalvo()) {
+            arq << "Animal salvo!\n";
+            break;
+        }
+
+        // Se o anima esta no fogo, ele morre
+        if (matriz[animal.getX()][animal.getY()] == 2) {
+            animal.setVivo(false);
+            if (animal.estaVivo()) {
+                arq << "Animal está vivo.\n";
+            } else {
+                arq << "Animal morreu no fogo.\n";
+            }   
+            break;
+        }
+
+        
+
         // Chama o método estático para propagar o fogo
         PropagacaoFogo::propagarFogo(matriz, linhas, colunas,direcao, arq);
 
@@ -99,6 +121,18 @@ void Floresta::atualizarESalvar(int iteracoes,char direcao, const string& nomeAr
         }
 
     }
+
+    // Resumo da simulação
+    arq << "\nResumo da simulação:\n";
+    arq << "Animal na posição: (" << animal.getX() << ", " << animal.getY() << ")\n";
+    arq << "Passos dados: " << animal.getPassos() << "\n";
+    if (animal.estaVivo()) {
+        arq << "Animal está vivo.\n";
+    } else {
+        arq << "Animal está morto.\n";
+    }
+
+
 
     arq.close();
 }
