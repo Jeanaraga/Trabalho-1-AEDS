@@ -17,31 +17,31 @@ void Animal::mover(vector<vector<int>> &matriz, ostream &os)
           return;
      }
 
-     pair<int, int> melhorMov = encontrarMelhorPosicao(matriz);
-     int novaX = melhorMov.first;
-     int novaY = melhorMov.second;
-
-     if (novaX != -1 && novaY != -1)
+     if(rota.empty())
      {
-          // Atualiza a posição do animal
-          matriz[x][y] = 0; // Marca a posição antiga como vazia
-          x = novaX;
-          y = novaY;
-          passos++;
-
-          
-
-          if (matriz[x][y] == 4)
+          bool achou =  calcularRota(matriz);
+          if(!achou)
           {
-               salvo = true;
-               os << "Animal se moveu para " << x << "," << y << " e encontrou água! Animal salvo!\n";
-               matriz[x][y] = 0; // Marca a posição como vazia após encontrar água
-               aplicarUmidadeAoRedor(matriz);
+               os << "Animal não encontrou uma rota para a água.\n";
+               return;
           }
-          else
-          {
-               os << "O animal esta cercado e não pode se mover em " << x << "," << y << "\n";
-          }
+     }
+
+     auto [novaX, novaY] = rota.front();
+     rota.pop();
+
+     os << " O animal se moveu de (" << x << ", " << y << ") para (" << novaX << ", " << novaY << ").\n";
+     x = novaX;
+     y = novaY;
+     passos++;
+
+     if (matriz[x][y] == 4) // Se o animal chegou na água
+     {
+          salvo = true;
+          os << "Animal chegou na água e está salvo!\n";
+          matriz[x][y] = 0; // Marca a célula como vazia
+          aplicarUmidadeAoRedor(matriz); // Aplica umidade ao redor
+          return;
      }
 }
 
@@ -72,54 +72,18 @@ void Animal::aplicarUmidadeAoRedor(vector<vector<int>> &matriz)
      }
 }
 
-pair<int, int> Animal::encontrarMelhorPosicao(vector<vector<int>> &matriz)
+
+bool Animal::calcularRota(vector<vector<int>> &matriz)
 {
-     int linhas = matriz.size();
+     int linhas =  matriz.size();
      int colunas = matriz[0].size();
+     vector<vector<bool>> visitado(linhas, vector<bool>(colunas, false));
+     
 
-     vector<pair<int, int>> direcaos = {
-         {-1, 0}, // cima
-         {1, 0},  // baixo
-         {0, -1}, // esquerda
-         {0, 1}   // direita
-     };
-
-     pair<int, int> melhorPosicao = {-1, -1};
-
-     int melhorPrioridade = -1;
-
-     for (auto [dx, dy] : direcaos)
-     {
-          int novaX = x + dx;
-          int novaY = y + dy;
-
-          if (novaX >= 0 && novaX < linhas && novaY >= 0 && novaY < colunas)
-          {
-               int valorCelula = matriz[novaX][novaY];
-               int prioridade = prioridadeCelula(valorCelula);
-
-               // Se a célula é válida e tem prioridade maior que a melhor encontrada
-               if (prioridade > melhorPrioridade)
-               {
-                    melhorPrioridade = prioridade;
-                    melhorPosicao = {novaX, novaY};
-               }
-          }
-     }
-
-     return melhorPosicao;
+     queue<pair<int, int>> fila;
 }
 
-int Animal::prioridadeCelula(int valor) const
-{
 
-     if (valor == 4)
-          return 0; // agua
-     if (valor == 0)
-          return 1; // vazio
-     if (valor == 1)
-          return 2; // arvore saudavel
-}
 
 // GET E SETTERS PADRÃO
 
@@ -152,4 +116,3 @@ bool Animal::setVivo(bool vivo)
      this->vivo = vivo;
      return this->vivo;
 }
-
