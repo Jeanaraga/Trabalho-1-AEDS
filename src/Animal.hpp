@@ -11,12 +11,13 @@ private:
     bool vivo;
     bool salvo;
     queue<pair<int, int>> rota;
+    int tentativas = 3;
 
     pair<int,int> encontrarMelhorPosicao(vector<vector<int>>& matriz);
     int prioridadeCelula(int celula) const;
 
 public:
-    Animal(int startX, int startY);
+    Animal();
 
     void mover(vector<vector<int>>& matriz, ostream& os);
     void aplicarUmidadeAoRedor(vector<vector<int>>& matriz);
@@ -29,4 +30,6 @@ public:
     bool estaVivo() const;
     bool estaSalvo() const;
     bool setVivo(bool vivo);
+    pair<int, int> escolherPosicaoInicialAleatoria(const vector<vector<int>>& matriz);
+
 };

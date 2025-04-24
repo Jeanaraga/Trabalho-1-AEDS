@@ -5,8 +5,7 @@
 #include <string>
 using namespace std;
 
-Floresta::Floresta(int startX, int startY) : animal(startX, startY) {
-
+Floresta::Floresta()  {
     linhas = 0;
     colunas = 0;
 }
@@ -131,6 +130,10 @@ void Floresta::atualizarESalvar(int iteracoes,char direcao, const string& nomeAr
     } else {
         arq << "Animal está morto.\n";
     }
+
+    // Imprime a matriz final
+    arq << "\nMatriz final:\n";
+    imprimirMatriz(arq);
 
 
 

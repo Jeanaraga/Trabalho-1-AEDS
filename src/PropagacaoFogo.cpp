@@ -15,24 +15,24 @@ void PropagacaoFogo::propagarFogo(vector<vector<int>>& matriz, int linhas, int c
                 // A célula em chamas passa a ser queimada
                 
                 novaMatriz[i][j] = 3;
-                os << "Elemento (" << i << "," << j << ") virou 3 (queimado)\n";
+                os << "(" << i << "," << j << ") virou 3 (queimado)\n";
 
                 // Verifica os vizinhos ortogonais e atualiza os que são árvores saudáveis (valor 1)
                 if ((i > 0 && matriz[i - 1][j] == 1) && (direcao == '-' || direcao == 'N')) {
                     novaMatriz[i - 1][j] = 2;
-                    os << "Elemento (" << i - 1 << "," << j << ") virou 2 (fogo) [direção: abaixo]\n";
+                    os << "(" << i - 1 << "," << j << ") virou 2 (fogo) [abaixo]\n";
                 }
                 if ((i < linhas - 1 && matriz[i + 1][j] == 1) && (direcao == '-' || direcao == 'S')) {
                     novaMatriz[i + 1][j] = 2;
-                    os << "Elemento (" << i + 1 << "," << j << ") virou 2 (fogo) [direção: acima]\n";
+                    os << "(" << i + 1 << "," << j << ") virou 2 (fogo) [acima]\n";
                 }
                 if ((j > 0 && matriz[i][j - 1] == 1) && (direcao == '-' || direcao == 'L')) {
                     novaMatriz[i][j - 1] = 2;
-                    os << "Elemento (" << i << "," << j - 1 << ") virou 2 (fogo) [direção: direita]\n";
+                    os << "(" << i << "," << j - 1 << ") virou 2 (fogo) [direita]\n";
                 }
                 if ((j < colunas - 1 && matriz[i][j + 1] == 1) && (direcao == '-' || direcao == 'O')) {
                     novaMatriz[i][j + 1] = 2;
-                    os << "Elemento (" << i << "," << j + 1 << ") virou 2 (fogo) [direção: esquerda]\n";
+                    os << "(" << i << "," << j + 1 << ") virou 2 (fogo) [esquerda]\n";
                 }
             }
         }

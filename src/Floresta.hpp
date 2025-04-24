@@ -12,7 +12,7 @@ private:
     Animal animal;
 
 public:
-    Floresta(int startX, int startY);
+    Floresta();
 
     bool carregarDeArquivo(const string& nomeArquivo);
 
