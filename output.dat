@@ -28,8 +28,8 @@ Direção do vento: -
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 
 Iteração 1:
-Nova tentativa! Animal renasce em (21,17)
-O animal comecou em (21,17).
+Nova tentativa! Animal renasce em (20,23)
+O animal comecou em (20,23).
 (12,12) virou 3 (queimado)
 (11,12) virou 2 (fogo) [abaixo]
 (13,12) virou 2 (fogo) [acima]
@@ -64,7 +64,7 @@ Matriz após Iteração 1:
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 
 Iteração 2:
-Animal se moveu de (21,17) para (21,16)
+Animal se moveu de (20,23) para (20,22)
 (11,12) virou 3 (queimado)
 (10,12) virou 2 (fogo) [abaixo]
 (11,11) virou 2 (fogo) [direita]
@@ -110,7 +110,7 @@ Matriz após Iteração 2:
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 
 Iteração 3:
-Animal se moveu de (21,16) para (21,15)
+Animal se moveu de (20,22) para (19,22)
 (10,12) virou 3 (queimado)
 (9,12) virou 2 (fogo) [abaixo]
 (10,11) virou 2 (fogo) [direita]
@@ -164,7 +164,7 @@ Matriz após Iteração 3:
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 
 Iteração 4:
-Animal se moveu de (21,15) para (21,14)
+Animal se moveu de (19,22) para (18,22)
 (9,12) virou 3 (queimado)
 (8,12) virou 2 (fogo) [abaixo]
 (9,11) virou 2 (fogo) [direita]
@@ -226,12 +226,12 @@ Matriz após Iteração 4:
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 
 Iteração 5:
-Animal se moveu de (21,14) para (20,14)
+Animal se moveu de (18,22) para (17,22)
 Animal chegou na água e está salvo!
 Animal salvo!
 
 Resumo da simulação:
-Animal na posição: (20, 14)
+Animal na posição: (17, 22)
 Passos dados: 4
 Animal está vivo.
 
@@ -253,10 +253,10 @@ Matriz final:
 1 1 1 1 1 1 1 1 1 1 2 0 3 3 2 1 1 1 1 1 1 1 1 1 4 
 1 1 1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 0 1 1 1 
 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 0 1 1 1 1 1 1 1 1 
-1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 1 1 
+1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 
 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 1 1 1 1 1 1 1 1 0 1 
 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 
 1 1 1 1 1 4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 
