@@ -8,9 +8,7 @@ O trabalho se trata de uma simulação de incêndio na floresta em há um animal
 - Linguagem: C++
 - Compilação via makefile
 - Estrutura do Projeto
-     - [Animal](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/main/src/Animal.cpp) (Toda logica que envolve o animal na simulação,como, mover o anima, calcula a rota, aplicar umidade[espalhar 1 ao redor do animal])
-     - [Floresta](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/main/src/Floresta.cpp) (
-     - [PropagaçãoFogo](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/main/src/PropagacaoFogo.cpp)
-     - [config](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/main/src/config.hpp)
+     - datasets (Pasta onde vai ter os arquivos de entrada e saida de dados)
+            
 
  #### 💡Como funciona
