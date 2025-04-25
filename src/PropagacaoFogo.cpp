@@ -41,3 +41,14 @@ void PropagacaoFogo::propagarFogo(vector<vector<int>>& matriz, int linhas, int c
     // Atualiza a matriz original com as mudanças da nova matriz
     matriz = novaMatriz;
 }
+
+bool PropagacaoFogo::temFogo(const vector<vector<int>>& matriz) {
+    for (const auto& linha : matriz) {
+        for (int celula : linha) {
+            if (celula == 2) { // Se houver fogo
+                return true;
+            }
+        }
+    }
+    return false;
+}

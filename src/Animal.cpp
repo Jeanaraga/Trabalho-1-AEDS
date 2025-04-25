@@ -5,7 +5,7 @@
 
 Animal::Animal()
 {
-     
+
      passos = 0;
      vivo = true;
      salvo = false;
@@ -209,7 +209,6 @@ pair<int, int> Animal::escolherPosicaoInicialAleatoria(const vector<vector<int>>
      if (posicoesValidas.empty())
           return {-1, -1}; // Nenhuma posição válida encontrada
 
-     
      int indiceAleatorio = rand() % posicoesValidas.size();
      return posicoesValidas[indiceAleatorio]; // Retorna uma posição aleatória
 }

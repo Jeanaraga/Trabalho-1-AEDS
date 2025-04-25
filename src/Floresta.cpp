@@ -5,14 +5,17 @@
 #include <string>
 using namespace std;
 
-Floresta::Floresta()  {
+Floresta::Floresta()
+{
     linhas = 0;
     colunas = 0;
 }
 
-bool Floresta::carregarDeArquivo(const string& nomeArquivo) {
+bool Floresta::carregarMatriz(const string &nomeArquivo)
+{
     ifstream arquivo(nomeArquivo);
-    if (!arquivo.is_open()) {
+    if (!arquivo.is_open())
+    {
         cerr << "Erro ao abrir o arquivo " << nomeArquivo << endl;
         return false;
     }
@@ -22,8 +25,8 @@ bool Floresta::carregarDeArquivo(const string& nomeArquivo) {
 
     matriz.resize(linhas, vector<int>(colunas));
 
-    for (int i = 0; i < linhas; i++) {
-        for (int j = 0; j < colunas; j++) {
+    for (int i = 0; i < linhas; i++){
+        for (int j = 0; j < colunas; j++){
             arquivo >> matriz[i][j];
         }
     }
@@ -35,107 +38,98 @@ bool Floresta::carregarDeArquivo(const string& nomeArquivo) {
     return true;
 }
 
-void Floresta::imprimirMatriz() const {
-    imprimirMatriz(cout);
-}
 
-void Floresta::imprimirMatriz(ostream& os) const {
-    for (const auto& linha : matriz) {
-        for (int celula : linha) {
-            os << celula << " ";
-        }
-        os << "\n";
-    }
-}
 
-bool Floresta::temFogo() const {
-    for (const auto& linha : matriz) {
-        for (int celula : linha) {
-            if (celula == 2) { // Se houver fogo
-                return true;
-            }
-        }
-    }
-    return false;
-}
 
-vector<vector<int>> Floresta::getMatriz() const {
-    return matriz;
-}
-
-void Floresta::atualizarESalvar(int iteracoes,char direcao, const string& nomeArquivo) {
+void Floresta::simular(int iteracoes, char direcao, const string &nomeArquivo)
+{
     ofstream arq(nomeArquivo);
     if (!arq.is_open()) {
         cerr << "Erro ao abrir o arquivo " << nomeArquivo << " para gravação." << endl;
         return;
     }
 
-    arq << "Matriz inicial:\n";
-    // Imprime a matriz inicial
-    arq << "Linhas: " << linhas << ", Colunas: " << colunas << "\n";
-    arq << "Direção do vento: " << direcao << "\n";
-    imprimirMatriz(arq);
-    arq << "\n"; // separador entre iterações
+    resumoInicial(arq, direcao); // imprime info da matriz inicial
 
-    for (int k = 0; k < iteracoes; ++k) {
-        //
-        
-        string cabecalho = "\n--- Iteração " + to_string(k + 1) + " ---\n";
-        arq << cabecalho;  
-
+    for (int k = 0; k < iteracoes; ++k)
+    {
+        arq << "Iteração " << k + 1 << ":\n";
         animal.mover(matriz, arq);
 
-        // Verifica se o animal está salvo
         if (animal.estaSalvo()) {
             arq << "Animal salvo!\n";
             break;
         }
 
-        // Se o anima esta no fogo, ele morre
         if (matriz[animal.getX()][animal.getY()] == 2) {
             animal.setVivo(false);
-            if (animal.estaVivo()) {
-                arq << "Animal está vivo.\n";
-            } else {
-                arq << "Animal morreu no fogo.\n";
-            }   
+            arq << "Animal morreu por fogo!\n";
             break;
         }
 
-        
+        PropagacaoFogo::propagarFogo(matriz, linhas, colunas, direcao, arq);
+        imprimirIteracao(k + 1, arq); // imprime a matriz com a numeração da iteração
 
-        // Chama o método estático para propagar o fogo
-        PropagacaoFogo::propagarFogo(matriz, linhas, colunas,direcao, arq);
-
-         string matMsg = "\nMatriz após Iteração " + to_string(k + 1) + ":\n";
-         arq << matMsg;
-        
-         imprimirMatriz(arq);
-         arq << "\n"; // separador entre iterações
-
-        // Verifica se ainda há fogo na floresta
-        if (!temFogo()) {
+        if (!PropagacaoFogo::temFogo(matriz)) {
             arq << "Não há mais fogo na floresta. Simulação encerrada.\n";
             break;
         }
-
     }
 
-    // Resumo da simulação
-    arq << "\nResumo da simulação:\n";
-    arq << "Animal na posição: (" << animal.getX() << ", " << animal.getY() << ")\n";
-    arq << "Passos dados: " << animal.getPassos() << "\n";
-    if (animal.estaVivo()) {
-        arq << "Animal está vivo.\n";
-    } else {
-        arq << "Animal está morto.\n";
-    }
-
-    // Imprime a matriz final
-    arq << "\nMatriz final:\n";
-    imprimirMatriz(arq);
-
-
-
+    resumoFinal(arq);
     arq.close();
 }
+
+
+
+void Floresta::resumoFinal(ostream &os) const
+{
+    os << "\nResumo da simulação:\n";
+    os << "Animal na posição: (" << animal.getX() << ", " << animal.getY() << ")\n";
+    os << "Passos dados: " << animal.getPassos() << "\n";
+    if (animal.estaVivo())
+    {
+        os << "Animal está vivo.\n";
+    }
+    else
+    {
+        os << "Animal está morto.\n";
+    }
+
+    os << "\nMatriz final:\n";
+    imprimirMatriz(os);
+}
+
+void Floresta::resumoInicial(ostream &os, char direcao) const
+{
+    os << "Matriz inicial:\n";
+    os << "Linhas: " << linhas << ", Colunas: " << colunas << "\n";
+    os << "Direção do vento: " << direcao << "\n";
+    imprimirMatriz(os);
+    os << "\n";
+}
+
+void Floresta::imprimirMatriz(ostream &os) const
+{
+    for (const auto &linha : matriz)
+    {
+        for (int celula : linha)
+        {
+            os << celula << " ";
+        }
+        os << "\n";
+    }
+}
+
+vector<vector<int>> Floresta::getMatriz() const
+{
+    return matriz;
+}
+
+void Floresta::imprimirIteracao(int iteracao, ostream& os) const {
+    
+    os << "\nMatriz após Iteração " << iteracao << ":\n";
+    imprimirMatriz(os);
+    os << "\n";
+}
+

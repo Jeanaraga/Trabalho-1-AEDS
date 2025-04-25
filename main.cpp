@@ -12,13 +12,13 @@ int main() {
     Floresta floresta;
 
     // Carrega a matriz do input.dat
-    if (!floresta.carregarDeArquivo("input.dat")) {
+    if (!floresta.carregarMatriz("input.dat")) {
         cerr << "Erro ao carregar o arquivo input.dat\n";
         return 1;
     }
 
     // Executa a simulação
-    floresta.atualizarESalvar(NUMERO_ITERACOES,DIRECAO_VENTO, "output.dat");
+    floresta.simular(NUMERO_ITERACOES,DIRECAO_VENTO, "output.dat");
 
     
     return 0;
