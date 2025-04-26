@@ -212,7 +212,73 @@ Aqui vamos analisar o resultado da simulação em diferentes matrizes, observand
 
 Uma floresta pequena (5x5) pouco densa, com espaço vazio nas bordas, limitando o espalhamento do fogo, sem direção do vento. Ao começar a propagação na posição (1,2), o fogo rapidamente se espalha para os vizinhos possíveis. No final, o fogo fica rodeando a água, mas o animal encontra a água antes que os caminhos se fechem. Após isso, todos os vizinhos ao redor do animal voltam a ser árvores saudáveis devido à aplicação da umidade.
 
+input_caso1.dat
+```
+5 5 1 2
+0 0 0 0 0
+0 1 1 1 0
+0 1 4 1 0
+0 1 1 1 0
+0 0 0 0 0
 
+```
+
+[Verifique o resultado aqui](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/main/casos_testes/output_caso1.dat)
+
+
+#### Caso 2
+
+Uma floresta média 8x8, mais densa, e com poucos bloqueadores naturais, faz com que o fogo se espalhe de forma muito rápida. Neste tipo de matriz, com poucas iterações, o fogo consegue alcançar praticamente toda a floresta, dificultando a fuga do animal. Porém, neste caso de teste, o animal nasceu um pouco longe do primeiro foco de fogo, o que facilitou sua fuga, situação que poderia ser mais difícil em outros cenários.
+
+Ao final da simulação, é possível perceber que apenas as extremidades da matriz permaneceram saudáveis. Isso acontece porque, quando o fogo nasce no centro, ele se alastra formando uma espécie de "losango", expandindo a cada iteração, caso não existam bloqueadores naturais.
+
+Arquivo: `input_caso2.dat`
+```
+8 8 3 3
+1 1 1 1 1 1 1 1
+1 1 1 1 1 1 4 1
+1 1 1 1 1 1 1 1
+1 1 1 2 1 1 1 1
+1 1 1 1 1 1 1 1
+1 1 0 1 1 1 1 1
+1 1 1 1 4 1 1 1
+1 1 1 1 1 1 1 1
+```
+
+[Verifique o resultado aqui](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/main/casos_testes/output_caso2.dat)
+
+---
+
+#### Caso 3
+
+Uma matriz maior (20x20), muito densa, e com as águas localizadas apenas nos cantos da floresta. Isso faz com que, na maioria dos casos, o animal precise percorrer uma distância muito maior para alcançar a água. Nesta floresta é possível observar claramente como o fogo se alastra a partir do centro, formando uma estrutura semelhante a um "losango", onde as extremidades vão se expandindo progressivamente a cada iteração até tomarem toda a floresta, caso não haja obstáculos naturais.
+
+Arquivo: `input_caso3.dat`
+```
+20 20 10 10
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4
+```
+
+[Verifique o resultado aqui](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/main/casos_testes/output_caso3.dat)
 
 ---
 
