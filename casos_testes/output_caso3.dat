@@ -1,0 +1,885 @@
+Matriz inicial:
+Linhas: 20, Colunas: 20
+Direção do vento: -
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+
+Iteração 1:
+Nova tentativa! Animal renasce em (18,9)
+O animal comecou em (18,9).
+(10,10) virou 3 (queimado)
+(9,10) virou 2 (fogo) [abaixo]
+(11,10) virou 2 (fogo) [acima]
+(10,9) virou 2 (fogo) [direita]
+(10,11) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 1:
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+
+Iteração 2:
+Animal se moveu de (18,9) para (19,9)
+(9,10) virou 3 (queimado)
+(8,10) virou 2 (fogo) [abaixo]
+(9,9) virou 2 (fogo) [direita]
+(9,11) virou 2 (fogo) [esquerda]
+(10,9) virou 3 (queimado)
+(9,9) virou 2 (fogo) [abaixo]
+(11,9) virou 2 (fogo) [acima]
+(10,8) virou 2 (fogo) [direita]
+(10,11) virou 3 (queimado)
+(9,11) virou 2 (fogo) [abaixo]
+(11,11) virou 2 (fogo) [acima]
+(10,12) virou 2 (fogo) [esquerda]
+(11,10) virou 3 (queimado)
+(12,10) virou 2 (fogo) [acima]
+(11,9) virou 2 (fogo) [direita]
+(11,11) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 2:
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+
+Iteração 3:
+Animal se moveu de (19,9) para (19,8)
+(8,10) virou 3 (queimado)
+(7,10) virou 2 (fogo) [abaixo]
+(8,9) virou 2 (fogo) [direita]
+(8,11) virou 2 (fogo) [esquerda]
+(9,9) virou 3 (queimado)
+(8,9) virou 2 (fogo) [abaixo]
+(9,8) virou 2 (fogo) [direita]
+(9,11) virou 3 (queimado)
+(8,11) virou 2 (fogo) [abaixo]
+(9,12) virou 2 (fogo) [esquerda]
+(10,8) virou 3 (queimado)
+(9,8) virou 2 (fogo) [abaixo]
+(11,8) virou 2 (fogo) [acima]
+(10,7) virou 2 (fogo) [direita]
+(10,12) virou 3 (queimado)
+(9,12) virou 2 (fogo) [abaixo]
+(11,12) virou 2 (fogo) [acima]
+(10,13) virou 2 (fogo) [esquerda]
+(11,9) virou 3 (queimado)
+(12,9) virou 2 (fogo) [acima]
+(11,8) virou 2 (fogo) [direita]
+(11,11) virou 3 (queimado)
+(12,11) virou 2 (fogo) [acima]
+(11,12) virou 2 (fogo) [esquerda]
+(12,10) virou 3 (queimado)
+(13,10) virou 2 (fogo) [acima]
+(12,9) virou 2 (fogo) [direita]
+(12,11) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 3:
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+
+Iteração 4:
+Animal se moveu de (19,8) para (19,7)
+(7,10) virou 3 (queimado)
+(6,10) virou 2 (fogo) [abaixo]
+(7,9) virou 2 (fogo) [direita]
+(7,11) virou 2 (fogo) [esquerda]
+(8,9) virou 3 (queimado)
+(7,9) virou 2 (fogo) [abaixo]
+(8,8) virou 2 (fogo) [direita]
+(8,11) virou 3 (queimado)
+(7,11) virou 2 (fogo) [abaixo]
+(8,12) virou 2 (fogo) [esquerda]
+(9,8) virou 3 (queimado)
+(8,8) virou 2 (fogo) [abaixo]
+(9,7) virou 2 (fogo) [direita]
+(9,12) virou 3 (queimado)
+(8,12) virou 2 (fogo) [abaixo]
+(9,13) virou 2 (fogo) [esquerda]
+(10,7) virou 3 (queimado)
+(9,7) virou 2 (fogo) [abaixo]
+(11,7) virou 2 (fogo) [acima]
+(10,6) virou 2 (fogo) [direita]
+(10,13) virou 3 (queimado)
+(9,13) virou 2 (fogo) [abaixo]
+(11,13) virou 2 (fogo) [acima]
+(10,14) virou 2 (fogo) [esquerda]
+(11,8) virou 3 (queimado)
+(12,8) virou 2 (fogo) [acima]
+(11,7) virou 2 (fogo) [direita]
+(11,12) virou 3 (queimado)
+(12,12) virou 2 (fogo) [acima]
+(11,13) virou 2 (fogo) [esquerda]
+(12,9) virou 3 (queimado)
+(13,9) virou 2 (fogo) [acima]
+(12,8) virou 2 (fogo) [direita]
+(12,11) virou 3 (queimado)
+(13,11) virou 2 (fogo) [acima]
+(12,12) virou 2 (fogo) [esquerda]
+(13,10) virou 3 (queimado)
+(14,10) virou 2 (fogo) [acima]
+(13,9) virou 2 (fogo) [direita]
+(13,11) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 4:
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+
+Iteração 5:
+Animal se moveu de (19,7) para (19,6)
+(6,10) virou 3 (queimado)
+(5,10) virou 2 (fogo) [abaixo]
+(6,9) virou 2 (fogo) [direita]
+(6,11) virou 2 (fogo) [esquerda]
+(7,9) virou 3 (queimado)
+(6,9) virou 2 (fogo) [abaixo]
+(7,8) virou 2 (fogo) [direita]
+(7,11) virou 3 (queimado)
+(6,11) virou 2 (fogo) [abaixo]
+(7,12) virou 2 (fogo) [esquerda]
+(8,8) virou 3 (queimado)
+(7,8) virou 2 (fogo) [abaixo]
+(8,7) virou 2 (fogo) [direita]
+(8,12) virou 3 (queimado)
+(7,12) virou 2 (fogo) [abaixo]
+(8,13) virou 2 (fogo) [esquerda]
+(9,7) virou 3 (queimado)
+(8,7) virou 2 (fogo) [abaixo]
+(9,6) virou 2 (fogo) [direita]
+(9,13) virou 3 (queimado)
+(8,13) virou 2 (fogo) [abaixo]
+(9,14) virou 2 (fogo) [esquerda]
+(10,6) virou 3 (queimado)
+(9,6) virou 2 (fogo) [abaixo]
+(11,6) virou 2 (fogo) [acima]
+(10,5) virou 2 (fogo) [direita]
+(10,14) virou 3 (queimado)
+(9,14) virou 2 (fogo) [abaixo]
+(11,14) virou 2 (fogo) [acima]
+(10,15) virou 2 (fogo) [esquerda]
+(11,7) virou 3 (queimado)
+(12,7) virou 2 (fogo) [acima]
+(11,6) virou 2 (fogo) [direita]
+(11,13) virou 3 (queimado)
+(12,13) virou 2 (fogo) [acima]
+(11,14) virou 2 (fogo) [esquerda]
+(12,8) virou 3 (queimado)
+(13,8) virou 2 (fogo) [acima]
+(12,7) virou 2 (fogo) [direita]
+(12,12) virou 3 (queimado)
+(13,12) virou 2 (fogo) [acima]
+(12,13) virou 2 (fogo) [esquerda]
+(13,9) virou 3 (queimado)
+(14,9) virou 2 (fogo) [acima]
+(13,8) virou 2 (fogo) [direita]
+(13,11) virou 3 (queimado)
+(14,11) virou 2 (fogo) [acima]
+(13,12) virou 2 (fogo) [esquerda]
+(14,10) virou 3 (queimado)
+(15,10) virou 2 (fogo) [acima]
+(14,9) virou 2 (fogo) [direita]
+(14,11) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 5:
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 2 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+
+Iteração 6:
+Animal se moveu de (19,6) para (19,5)
+(5,10) virou 3 (queimado)
+(4,10) virou 2 (fogo) [abaixo]
+(5,9) virou 2 (fogo) [direita]
+(5,11) virou 2 (fogo) [esquerda]
+(6,9) virou 3 (queimado)
+(5,9) virou 2 (fogo) [abaixo]
+(6,8) virou 2 (fogo) [direita]
+(6,11) virou 3 (queimado)
+(5,11) virou 2 (fogo) [abaixo]
+(6,12) virou 2 (fogo) [esquerda]
+(7,8) virou 3 (queimado)
+(6,8) virou 2 (fogo) [abaixo]
+(7,7) virou 2 (fogo) [direita]
+(7,12) virou 3 (queimado)
+(6,12) virou 2 (fogo) [abaixo]
+(7,13) virou 2 (fogo) [esquerda]
+(8,7) virou 3 (queimado)
+(7,7) virou 2 (fogo) [abaixo]
+(8,6) virou 2 (fogo) [direita]
+(8,13) virou 3 (queimado)
+(7,13) virou 2 (fogo) [abaixo]
+(8,14) virou 2 (fogo) [esquerda]
+(9,6) virou 3 (queimado)
+(8,6) virou 2 (fogo) [abaixo]
+(9,5) virou 2 (fogo) [direita]
+(9,14) virou 3 (queimado)
+(8,14) virou 2 (fogo) [abaixo]
+(9,15) virou 2 (fogo) [esquerda]
+(10,5) virou 3 (queimado)
+(9,5) virou 2 (fogo) [abaixo]
+(11,5) virou 2 (fogo) [acima]
+(10,4) virou 2 (fogo) [direita]
+(10,15) virou 3 (queimado)
+(9,15) virou 2 (fogo) [abaixo]
+(11,15) virou 2 (fogo) [acima]
+(10,16) virou 2 (fogo) [esquerda]
+(11,6) virou 3 (queimado)
+(12,6) virou 2 (fogo) [acima]
+(11,5) virou 2 (fogo) [direita]
+(11,14) virou 3 (queimado)
+(12,14) virou 2 (fogo) [acima]
+(11,15) virou 2 (fogo) [esquerda]
+(12,7) virou 3 (queimado)
+(13,7) virou 2 (fogo) [acima]
+(12,6) virou 2 (fogo) [direita]
+(12,13) virou 3 (queimado)
+(13,13) virou 2 (fogo) [acima]
+(12,14) virou 2 (fogo) [esquerda]
+(13,8) virou 3 (queimado)
+(14,8) virou 2 (fogo) [acima]
+(13,7) virou 2 (fogo) [direita]
+(13,12) virou 3 (queimado)
+(14,12) virou 2 (fogo) [acima]
+(13,13) virou 2 (fogo) [esquerda]
+(14,9) virou 3 (queimado)
+(15,9) virou 2 (fogo) [acima]
+(14,8) virou 2 (fogo) [direita]
+(14,11) virou 3 (queimado)
+(15,11) virou 2 (fogo) [acima]
+(14,12) virou 2 (fogo) [esquerda]
+(15,10) virou 3 (queimado)
+(16,10) virou 2 (fogo) [acima]
+(15,9) virou 2 (fogo) [direita]
+(15,11) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 6:
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 2 1 1 1 1 
+1 1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 2 1 1 1 
+1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 2 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+
+Iteração 7:
+Animal se moveu de (19,5) para (19,4)
+(4,10) virou 3 (queimado)
+(3,10) virou 2 (fogo) [abaixo]
+(4,9) virou 2 (fogo) [direita]
+(4,11) virou 2 (fogo) [esquerda]
+(5,9) virou 3 (queimado)
+(4,9) virou 2 (fogo) [abaixo]
+(5,8) virou 2 (fogo) [direita]
+(5,11) virou 3 (queimado)
+(4,11) virou 2 (fogo) [abaixo]
+(5,12) virou 2 (fogo) [esquerda]
+(6,8) virou 3 (queimado)
+(5,8) virou 2 (fogo) [abaixo]
+(6,7) virou 2 (fogo) [direita]
+(6,12) virou 3 (queimado)
+(5,12) virou 2 (fogo) [abaixo]
+(6,13) virou 2 (fogo) [esquerda]
+(7,7) virou 3 (queimado)
+(6,7) virou 2 (fogo) [abaixo]
+(7,6) virou 2 (fogo) [direita]
+(7,13) virou 3 (queimado)
+(6,13) virou 2 (fogo) [abaixo]
+(7,14) virou 2 (fogo) [esquerda]
+(8,6) virou 3 (queimado)
+(7,6) virou 2 (fogo) [abaixo]
+(8,5) virou 2 (fogo) [direita]
+(8,14) virou 3 (queimado)
+(7,14) virou 2 (fogo) [abaixo]
+(8,15) virou 2 (fogo) [esquerda]
+(9,5) virou 3 (queimado)
+(8,5) virou 2 (fogo) [abaixo]
+(9,4) virou 2 (fogo) [direita]
+(9,15) virou 3 (queimado)
+(8,15) virou 2 (fogo) [abaixo]
+(9,16) virou 2 (fogo) [esquerda]
+(10,4) virou 3 (queimado)
+(9,4) virou 2 (fogo) [abaixo]
+(11,4) virou 2 (fogo) [acima]
+(10,3) virou 2 (fogo) [direita]
+(10,16) virou 3 (queimado)
+(9,16) virou 2 (fogo) [abaixo]
+(11,16) virou 2 (fogo) [acima]
+(10,17) virou 2 (fogo) [esquerda]
+(11,5) virou 3 (queimado)
+(12,5) virou 2 (fogo) [acima]
+(11,4) virou 2 (fogo) [direita]
+(11,15) virou 3 (queimado)
+(12,15) virou 2 (fogo) [acima]
+(11,16) virou 2 (fogo) [esquerda]
+(12,6) virou 3 (queimado)
+(13,6) virou 2 (fogo) [acima]
+(12,5) virou 2 (fogo) [direita]
+(12,14) virou 3 (queimado)
+(13,14) virou 2 (fogo) [acima]
+(12,15) virou 2 (fogo) [esquerda]
+(13,7) virou 3 (queimado)
+(14,7) virou 2 (fogo) [acima]
+(13,6) virou 2 (fogo) [direita]
+(13,13) virou 3 (queimado)
+(14,13) virou 2 (fogo) [acima]
+(13,14) virou 2 (fogo) [esquerda]
+(14,8) virou 3 (queimado)
+(15,8) virou 2 (fogo) [acima]
+(14,7) virou 2 (fogo) [direita]
+(14,12) virou 3 (queimado)
+(15,12) virou 2 (fogo) [acima]
+(14,13) virou 2 (fogo) [esquerda]
+(15,9) virou 3 (queimado)
+(16,9) virou 2 (fogo) [acima]
+(15,8) virou 2 (fogo) [direita]
+(15,11) virou 3 (queimado)
+(16,11) virou 2 (fogo) [acima]
+(15,12) virou 2 (fogo) [esquerda]
+(16,10) virou 3 (queimado)
+(17,10) virou 2 (fogo) [acima]
+(16,9) virou 2 (fogo) [direita]
+(16,11) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 7:
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 2 1 1 1 1 
+1 1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 2 1 1 1 
+1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 1 
+1 1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 2 1 1 1 
+1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 2 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+
+Iteração 8:
+Animal se moveu de (19,4) para (19,3)
+(3,10) virou 3 (queimado)
+(2,10) virou 2 (fogo) [abaixo]
+(3,9) virou 2 (fogo) [direita]
+(3,11) virou 2 (fogo) [esquerda]
+(4,9) virou 3 (queimado)
+(3,9) virou 2 (fogo) [abaixo]
+(4,8) virou 2 (fogo) [direita]
+(4,11) virou 3 (queimado)
+(3,11) virou 2 (fogo) [abaixo]
+(4,12) virou 2 (fogo) [esquerda]
+(5,8) virou 3 (queimado)
+(4,8) virou 2 (fogo) [abaixo]
+(5,7) virou 2 (fogo) [direita]
+(5,12) virou 3 (queimado)
+(4,12) virou 2 (fogo) [abaixo]
+(5,13) virou 2 (fogo) [esquerda]
+(6,7) virou 3 (queimado)
+(5,7) virou 2 (fogo) [abaixo]
+(6,6) virou 2 (fogo) [direita]
+(6,13) virou 3 (queimado)
+(5,13) virou 2 (fogo) [abaixo]
+(6,14) virou 2 (fogo) [esquerda]
+(7,6) virou 3 (queimado)
+(6,6) virou 2 (fogo) [abaixo]
+(7,5) virou 2 (fogo) [direita]
+(7,14) virou 3 (queimado)
+(6,14) virou 2 (fogo) [abaixo]
+(7,15) virou 2 (fogo) [esquerda]
+(8,5) virou 3 (queimado)
+(7,5) virou 2 (fogo) [abaixo]
+(8,4) virou 2 (fogo) [direita]
+(8,15) virou 3 (queimado)
+(7,15) virou 2 (fogo) [abaixo]
+(8,16) virou 2 (fogo) [esquerda]
+(9,4) virou 3 (queimado)
+(8,4) virou 2 (fogo) [abaixo]
+(9,3) virou 2 (fogo) [direita]
+(9,16) virou 3 (queimado)
+(8,16) virou 2 (fogo) [abaixo]
+(9,17) virou 2 (fogo) [esquerda]
+(10,3) virou 3 (queimado)
+(9,3) virou 2 (fogo) [abaixo]
+(11,3) virou 2 (fogo) [acima]
+(10,2) virou 2 (fogo) [direita]
+(10,17) virou 3 (queimado)
+(9,17) virou 2 (fogo) [abaixo]
+(11,17) virou 2 (fogo) [acima]
+(10,18) virou 2 (fogo) [esquerda]
+(11,4) virou 3 (queimado)
+(12,4) virou 2 (fogo) [acima]
+(11,3) virou 2 (fogo) [direita]
+(11,16) virou 3 (queimado)
+(12,16) virou 2 (fogo) [acima]
+(11,17) virou 2 (fogo) [esquerda]
+(12,5) virou 3 (queimado)
+(13,5) virou 2 (fogo) [acima]
+(12,4) virou 2 (fogo) [direita]
+(12,15) virou 3 (queimado)
+(13,15) virou 2 (fogo) [acima]
+(12,16) virou 2 (fogo) [esquerda]
+(13,6) virou 3 (queimado)
+(14,6) virou 2 (fogo) [acima]
+(13,5) virou 2 (fogo) [direita]
+(13,14) virou 3 (queimado)
+(14,14) virou 2 (fogo) [acima]
+(13,15) virou 2 (fogo) [esquerda]
+(14,7) virou 3 (queimado)
+(15,7) virou 2 (fogo) [acima]
+(14,6) virou 2 (fogo) [direita]
+(14,13) virou 3 (queimado)
+(15,13) virou 2 (fogo) [acima]
+(14,14) virou 2 (fogo) [esquerda]
+(15,8) virou 3 (queimado)
+(16,8) virou 2 (fogo) [acima]
+(15,7) virou 2 (fogo) [direita]
+(15,12) virou 3 (queimado)
+(16,12) virou 2 (fogo) [acima]
+(15,13) virou 2 (fogo) [esquerda]
+(16,9) virou 3 (queimado)
+(17,9) virou 2 (fogo) [acima]
+(16,8) virou 2 (fogo) [direita]
+(16,11) virou 3 (queimado)
+(17,11) virou 2 (fogo) [acima]
+(16,12) virou 2 (fogo) [esquerda]
+(17,10) virou 3 (queimado)
+(18,10) virou 2 (fogo) [acima]
+(17,9) virou 2 (fogo) [direita]
+(17,11) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 8:
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 2 1 1 1 1 
+1 1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 2 1 1 1 
+1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 1 
+1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 
+1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 1 
+1 1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 2 1 1 1 
+1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 2 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+
+Iteração 9:
+Animal se moveu de (19,3) para (19,2)
+(2,10) virou 3 (queimado)
+(1,10) virou 2 (fogo) [abaixo]
+(2,9) virou 2 (fogo) [direita]
+(2,11) virou 2 (fogo) [esquerda]
+(3,9) virou 3 (queimado)
+(2,9) virou 2 (fogo) [abaixo]
+(3,8) virou 2 (fogo) [direita]
+(3,11) virou 3 (queimado)
+(2,11) virou 2 (fogo) [abaixo]
+(3,12) virou 2 (fogo) [esquerda]
+(4,8) virou 3 (queimado)
+(3,8) virou 2 (fogo) [abaixo]
+(4,7) virou 2 (fogo) [direita]
+(4,12) virou 3 (queimado)
+(3,12) virou 2 (fogo) [abaixo]
+(4,13) virou 2 (fogo) [esquerda]
+(5,7) virou 3 (queimado)
+(4,7) virou 2 (fogo) [abaixo]
+(5,6) virou 2 (fogo) [direita]
+(5,13) virou 3 (queimado)
+(4,13) virou 2 (fogo) [abaixo]
+(5,14) virou 2 (fogo) [esquerda]
+(6,6) virou 3 (queimado)
+(5,6) virou 2 (fogo) [abaixo]
+(6,5) virou 2 (fogo) [direita]
+(6,14) virou 3 (queimado)
+(5,14) virou 2 (fogo) [abaixo]
+(6,15) virou 2 (fogo) [esquerda]
+(7,5) virou 3 (queimado)
+(6,5) virou 2 (fogo) [abaixo]
+(7,4) virou 2 (fogo) [direita]
+(7,15) virou 3 (queimado)
+(6,15) virou 2 (fogo) [abaixo]
+(7,16) virou 2 (fogo) [esquerda]
+(8,4) virou 3 (queimado)
+(7,4) virou 2 (fogo) [abaixo]
+(8,3) virou 2 (fogo) [direita]
+(8,16) virou 3 (queimado)
+(7,16) virou 2 (fogo) [abaixo]
+(8,17) virou 2 (fogo) [esquerda]
+(9,3) virou 3 (queimado)
+(8,3) virou 2 (fogo) [abaixo]
+(9,2) virou 2 (fogo) [direita]
+(9,17) virou 3 (queimado)
+(8,17) virou 2 (fogo) [abaixo]
+(9,18) virou 2 (fogo) [esquerda]
+(10,2) virou 3 (queimado)
+(9,2) virou 2 (fogo) [abaixo]
+(11,2) virou 2 (fogo) [acima]
+(10,1) virou 2 (fogo) [direita]
+(10,18) virou 3 (queimado)
+(9,18) virou 2 (fogo) [abaixo]
+(11,18) virou 2 (fogo) [acima]
+(10,19) virou 2 (fogo) [esquerda]
+(11,3) virou 3 (queimado)
+(12,3) virou 2 (fogo) [acima]
+(11,2) virou 2 (fogo) [direita]
+(11,17) virou 3 (queimado)
+(12,17) virou 2 (fogo) [acima]
+(11,18) virou 2 (fogo) [esquerda]
+(12,4) virou 3 (queimado)
+(13,4) virou 2 (fogo) [acima]
+(12,3) virou 2 (fogo) [direita]
+(12,16) virou 3 (queimado)
+(13,16) virou 2 (fogo) [acima]
+(12,17) virou 2 (fogo) [esquerda]
+(13,5) virou 3 (queimado)
+(14,5) virou 2 (fogo) [acima]
+(13,4) virou 2 (fogo) [direita]
+(13,15) virou 3 (queimado)
+(14,15) virou 2 (fogo) [acima]
+(13,16) virou 2 (fogo) [esquerda]
+(14,6) virou 3 (queimado)
+(15,6) virou 2 (fogo) [acima]
+(14,5) virou 2 (fogo) [direita]
+(14,14) virou 3 (queimado)
+(15,14) virou 2 (fogo) [acima]
+(14,15) virou 2 (fogo) [esquerda]
+(15,7) virou 3 (queimado)
+(16,7) virou 2 (fogo) [acima]
+(15,6) virou 2 (fogo) [direita]
+(15,13) virou 3 (queimado)
+(16,13) virou 2 (fogo) [acima]
+(15,14) virou 2 (fogo) [esquerda]
+(16,8) virou 3 (queimado)
+(17,8) virou 2 (fogo) [acima]
+(16,7) virou 2 (fogo) [direita]
+(16,12) virou 3 (queimado)
+(17,12) virou 2 (fogo) [acima]
+(16,13) virou 2 (fogo) [esquerda]
+(17,9) virou 3 (queimado)
+(18,9) virou 2 (fogo) [acima]
+(17,8) virou 2 (fogo) [direita]
+(17,11) virou 3 (queimado)
+(18,11) virou 2 (fogo) [acima]
+(17,12) virou 2 (fogo) [esquerda]
+(18,10) virou 3 (queimado)
+(19,10) virou 2 (fogo) [acima]
+(18,9) virou 2 (fogo) [direita]
+(18,11) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 9:
+4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 
+1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 2 1 1 1 1 
+1 1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 2 1 1 1 
+1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 1 
+1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 
+1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 
+1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 
+1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 1 
+1 1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 2 1 1 1 
+1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 2 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+4 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 4 
+
+Iteração 10:
+Animal se moveu de (19,2) para (19,1)
+(1,10) virou 3 (queimado)
+(0,10) virou 2 (fogo) [abaixo]
+(1,9) virou 2 (fogo) [direita]
+(1,11) virou 2 (fogo) [esquerda]
+(2,9) virou 3 (queimado)
+(1,9) virou 2 (fogo) [abaixo]
+(2,8) virou 2 (fogo) [direita]
+(2,11) virou 3 (queimado)
+(1,11) virou 2 (fogo) [abaixo]
+(2,12) virou 2 (fogo) [esquerda]
+(3,8) virou 3 (queimado)
+(2,8) virou 2 (fogo) [abaixo]
+(3,7) virou 2 (fogo) [direita]
+(3,12) virou 3 (queimado)
+(2,12) virou 2 (fogo) [abaixo]
+(3,13) virou 2 (fogo) [esquerda]
+(4,7) virou 3 (queimado)
+(3,7) virou 2 (fogo) [abaixo]
+(4,6) virou 2 (fogo) [direita]
+(4,13) virou 3 (queimado)
+(3,13) virou 2 (fogo) [abaixo]
+(4,14) virou 2 (fogo) [esquerda]
+(5,6) virou 3 (queimado)
+(4,6) virou 2 (fogo) [abaixo]
+(5,5) virou 2 (fogo) [direita]
+(5,14) virou 3 (queimado)
+(4,14) virou 2 (fogo) [abaixo]
+(5,15) virou 2 (fogo) [esquerda]
+(6,5) virou 3 (queimado)
+(5,5) virou 2 (fogo) [abaixo]
+(6,4) virou 2 (fogo) [direita]
+(6,15) virou 3 (queimado)
+(5,15) virou 2 (fogo) [abaixo]
+(6,16) virou 2 (fogo) [esquerda]
+(7,4) virou 3 (queimado)
+(6,4) virou 2 (fogo) [abaixo]
+(7,3) virou 2 (fogo) [direita]
+(7,16) virou 3 (queimado)
+(6,16) virou 2 (fogo) [abaixo]
+(7,17) virou 2 (fogo) [esquerda]
+(8,3) virou 3 (queimado)
+(7,3) virou 2 (fogo) [abaixo]
+(8,2) virou 2 (fogo) [direita]
+(8,17) virou 3 (queimado)
+(7,17) virou 2 (fogo) [abaixo]
+(8,18) virou 2 (fogo) [esquerda]
+(9,2) virou 3 (queimado)
+(8,2) virou 2 (fogo) [abaixo]
+(9,1) virou 2 (fogo) [direita]
+(9,18) virou 3 (queimado)
+(8,18) virou 2 (fogo) [abaixo]
+(9,19) virou 2 (fogo) [esquerda]
+(10,1) virou 3 (queimado)
+(9,1) virou 2 (fogo) [abaixo]
+(11,1) virou 2 (fogo) [acima]
+(10,0) virou 2 (fogo) [direita]
+(10,19) virou 3 (queimado)
+(9,19) virou 2 (fogo) [abaixo]
+(11,19) virou 2 (fogo) [acima]
+(11,2) virou 3 (queimado)
+(12,2) virou 2 (fogo) [acima]
+(11,1) virou 2 (fogo) [direita]
+(11,18) virou 3 (queimado)
+(12,18) virou 2 (fogo) [acima]
+(11,19) virou 2 (fogo) [esquerda]
+(12,3) virou 3 (queimado)
+(13,3) virou 2 (fogo) [acima]
+(12,2) virou 2 (fogo) [direita]
+(12,17) virou 3 (queimado)
+(13,17) virou 2 (fogo) [acima]
+(12,18) virou 2 (fogo) [esquerda]
+(13,4) virou 3 (queimado)
+(14,4) virou 2 (fogo) [acima]
+(13,3) virou 2 (fogo) [direita]
+(13,16) virou 3 (queimado)
+(14,16) virou 2 (fogo) [acima]
+(13,17) virou 2 (fogo) [esquerda]
+(14,5) virou 3 (queimado)
+(15,5) virou 2 (fogo) [acima]
+(14,4) virou 2 (fogo) [direita]
+(14,15) virou 3 (queimado)
+(15,15) virou 2 (fogo) [acima]
+(14,16) virou 2 (fogo) [esquerda]
+(15,6) virou 3 (queimado)
+(16,6) virou 2 (fogo) [acima]
+(15,5) virou 2 (fogo) [direita]
+(15,14) virou 3 (queimado)
+(16,14) virou 2 (fogo) [acima]
+(15,15) virou 2 (fogo) [esquerda]
+(16,7) virou 3 (queimado)
+(17,7) virou 2 (fogo) [acima]
+(16,6) virou 2 (fogo) [direita]
+(16,13) virou 3 (queimado)
+(17,13) virou 2 (fogo) [acima]
+(16,14) virou 2 (fogo) [esquerda]
+(17,8) virou 3 (queimado)
+(18,8) virou 2 (fogo) [acima]
+(17,7) virou 2 (fogo) [direita]
+(17,12) virou 3 (queimado)
+(18,12) virou 2 (fogo) [acima]
+(17,13) virou 2 (fogo) [esquerda]
+(18,9) virou 3 (queimado)
+(19,9) virou 2 (fogo) [acima]
+(18,8) virou 2 (fogo) [direita]
+(18,11) virou 3 (queimado)
+(19,11) virou 2 (fogo) [acima]
+(18,12) virou 2 (fogo) [esquerda]
+(19,10) virou 3 (queimado)
+(19,9) virou 2 (fogo) [direita]
+(19,11) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 10:
+4 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 4 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 2 1 1 1 1 
+1 1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 2 1 1 1 
+1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 1 
+1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 
+1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 
+2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 
+1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 
+1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 1 
+1 1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 2 1 1 1 
+1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 2 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+4 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 4 
+
+Iteração 11:
+Animal se moveu de (19,1) para (19,0)
+Animal chegou na água e está salvo!
+Animal salvo!
+
+Resumo da simulação:
+Animal na posição: (19, 0)
+Passos dados: 10
+Animal está vivo.
+
+Matriz final:
+4 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 4 
+1 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 2 1 1 1 1 
+1 1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 2 1 1 1 
+1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 1 
+1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 
+1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 
+2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 
+1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 
+1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 2 1 1 
+1 1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 2 1 1 1 
+1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 2 1 1 1 1 
+1 1 1 1 1 1 2 3 3 3 3 3 3 3 2 1 1 1 1 1 
+1 1 1 1 1 1 1 2 3 3 3 3 3 2 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 2 3 3 3 2 1 1 1 1 1 1 1 
+0 1 1 1 1 1 1 1 1 2 3 2 1 1 1 1 1 1 1 4 

@@ -1,0 +1,248 @@
+Matriz inicial:
+Linhas: 8, Colunas: 8
+Direção do vento: -
+1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 4 1 
+1 1 1 1 1 1 1 1 
+1 1 1 2 1 1 1 1 
+1 1 1 1 1 1 1 1 
+1 1 0 1 1 1 1 1 
+1 1 1 1 4 1 1 1 
+1 1 1 1 1 1 1 1 
+
+Iteração 1:
+Nova tentativa! Animal renasce em (1,0)
+O animal comecou em (1,0).
+(3,3) virou 3 (queimado)
+(2,3) virou 2 (fogo) [abaixo]
+(4,3) virou 2 (fogo) [acima]
+(3,2) virou 2 (fogo) [direita]
+(3,4) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 1:
+1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 4 1 
+1 1 1 2 1 1 1 1 
+1 1 2 3 2 1 1 1 
+1 1 1 2 1 1 1 1 
+1 1 0 1 1 1 1 1 
+1 1 1 1 4 1 1 1 
+1 1 1 1 1 1 1 1 
+
+Iteração 2:
+Animal se moveu de (1,0) para (1,1)
+(2,3) virou 3 (queimado)
+(1,3) virou 2 (fogo) [abaixo]
+(2,2) virou 2 (fogo) [direita]
+(2,4) virou 2 (fogo) [esquerda]
+(3,2) virou 3 (queimado)
+(2,2) virou 2 (fogo) [abaixo]
+(4,2) virou 2 (fogo) [acima]
+(3,1) virou 2 (fogo) [direita]
+(3,4) virou 3 (queimado)
+(2,4) virou 2 (fogo) [abaixo]
+(4,4) virou 2 (fogo) [acima]
+(3,5) virou 2 (fogo) [esquerda]
+(4,3) virou 3 (queimado)
+(5,3) virou 2 (fogo) [acima]
+(4,2) virou 2 (fogo) [direita]
+(4,4) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 2:
+1 1 1 1 1 1 1 1 
+1 1 1 2 1 1 4 1 
+1 1 2 3 2 1 1 1 
+1 2 3 3 3 2 1 1 
+1 1 2 3 2 1 1 1 
+1 1 0 2 1 1 1 1 
+1 1 1 1 4 1 1 1 
+1 1 1 1 1 1 1 1 
+
+Iteração 3:
+Animal se moveu de (1,1) para (1,2)
+(1,3) virou 3 (queimado)
+(0,3) virou 2 (fogo) [abaixo]
+(1,2) virou 2 (fogo) [direita]
+(1,4) virou 2 (fogo) [esquerda]
+(2,2) virou 3 (queimado)
+(1,2) virou 2 (fogo) [abaixo]
+(2,1) virou 2 (fogo) [direita]
+(2,4) virou 3 (queimado)
+(1,4) virou 2 (fogo) [abaixo]
+(2,5) virou 2 (fogo) [esquerda]
+(3,1) virou 3 (queimado)
+(2,1) virou 2 (fogo) [abaixo]
+(4,1) virou 2 (fogo) [acima]
+(3,0) virou 2 (fogo) [direita]
+(3,5) virou 3 (queimado)
+(2,5) virou 2 (fogo) [abaixo]
+(4,5) virou 2 (fogo) [acima]
+(3,6) virou 2 (fogo) [esquerda]
+(4,2) virou 3 (queimado)
+(4,1) virou 2 (fogo) [direita]
+(4,4) virou 3 (queimado)
+(5,4) virou 2 (fogo) [acima]
+(4,5) virou 2 (fogo) [esquerda]
+(5,3) virou 3 (queimado)
+(6,3) virou 2 (fogo) [acima]
+(5,4) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 3:
+1 1 1 2 1 1 1 1 
+1 1 2 3 2 1 4 1 
+1 2 3 3 3 2 1 1 
+2 3 3 3 3 3 2 1 
+1 2 3 3 3 2 1 1 
+1 1 0 3 2 1 1 1 
+1 1 1 2 4 1 1 1 
+1 1 1 1 1 1 1 1 
+
+Iteração 4:
+Animal se moveu de (1,2) para (1,3)
+(0,3) virou 3 (queimado)
+(0,2) virou 2 (fogo) [direita]
+(0,4) virou 2 (fogo) [esquerda]
+(1,2) virou 3 (queimado)
+(0,2) virou 2 (fogo) [abaixo]
+(1,1) virou 2 (fogo) [direita]
+(1,4) virou 3 (queimado)
+(0,4) virou 2 (fogo) [abaixo]
+(1,5) virou 2 (fogo) [esquerda]
+(2,1) virou 3 (queimado)
+(1,1) virou 2 (fogo) [abaixo]
+(2,0) virou 2 (fogo) [direita]
+(2,5) virou 3 (queimado)
+(1,5) virou 2 (fogo) [abaixo]
+(2,6) virou 2 (fogo) [esquerda]
+(3,0) virou 3 (queimado)
+(2,0) virou 2 (fogo) [abaixo]
+(4,0) virou 2 (fogo) [acima]
+(3,6) virou 3 (queimado)
+(2,6) virou 2 (fogo) [abaixo]
+(4,6) virou 2 (fogo) [acima]
+(3,7) virou 2 (fogo) [esquerda]
+(4,1) virou 3 (queimado)
+(5,1) virou 2 (fogo) [acima]
+(4,0) virou 2 (fogo) [direita]
+(4,5) virou 3 (queimado)
+(5,5) virou 2 (fogo) [acima]
+(4,6) virou 2 (fogo) [esquerda]
+(5,4) virou 3 (queimado)
+(5,5) virou 2 (fogo) [esquerda]
+(6,3) virou 3 (queimado)
+(7,3) virou 2 (fogo) [acima]
+(6,2) virou 2 (fogo) [direita]
+
+Matriz após Iteração 4:
+1 1 2 3 2 1 1 1 
+1 2 3 3 3 2 4 1 
+2 3 3 3 3 3 2 1 
+3 3 3 3 3 3 3 2 
+2 3 3 3 3 3 2 1 
+1 2 0 3 3 2 1 1 
+1 1 2 3 4 1 1 1 
+1 1 1 2 1 1 1 1 
+
+Iteração 5:
+Animal se moveu de (1,3) para (1,4)
+(0,2) virou 3 (queimado)
+(0,1) virou 2 (fogo) [direita]
+(0,4) virou 3 (queimado)
+(0,5) virou 2 (fogo) [esquerda]
+(1,1) virou 3 (queimado)
+(0,1) virou 2 (fogo) [abaixo]
+(1,0) virou 2 (fogo) [direita]
+(1,5) virou 3 (queimado)
+(0,5) virou 2 (fogo) [abaixo]
+(2,0) virou 3 (queimado)
+(1,0) virou 2 (fogo) [abaixo]
+(2,6) virou 3 (queimado)
+(2,7) virou 2 (fogo) [esquerda]
+(3,7) virou 3 (queimado)
+(2,7) virou 2 (fogo) [abaixo]
+(4,7) virou 2 (fogo) [acima]
+(4,0) virou 3 (queimado)
+(5,0) virou 2 (fogo) [acima]
+(4,6) virou 3 (queimado)
+(5,6) virou 2 (fogo) [acima]
+(4,7) virou 2 (fogo) [esquerda]
+(5,1) virou 3 (queimado)
+(6,1) virou 2 (fogo) [acima]
+(5,0) virou 2 (fogo) [direita]
+(5,5) virou 3 (queimado)
+(6,5) virou 2 (fogo) [acima]
+(5,6) virou 2 (fogo) [esquerda]
+(6,2) virou 3 (queimado)
+(7,2) virou 2 (fogo) [acima]
+(6,1) virou 2 (fogo) [direita]
+(7,3) virou 3 (queimado)
+(7,2) virou 2 (fogo) [direita]
+(7,4) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 5:
+1 2 3 3 3 2 1 1 
+2 3 3 3 3 3 4 1 
+3 3 3 3 3 3 3 2 
+3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 2 
+2 3 0 3 3 3 2 1 
+1 2 3 3 4 2 1 1 
+1 1 2 3 2 1 1 1 
+
+Iteração 6:
+Animal se moveu de (1,4) para (1,5)
+(0,1) virou 3 (queimado)
+(0,0) virou 2 (fogo) [direita]
+(0,5) virou 3 (queimado)
+(0,6) virou 2 (fogo) [esquerda]
+(1,0) virou 3 (queimado)
+(0,0) virou 2 (fogo) [abaixo]
+(2,7) virou 3 (queimado)
+(1,7) virou 2 (fogo) [abaixo]
+(4,7) virou 3 (queimado)
+(5,7) virou 2 (fogo) [acima]
+(5,0) virou 3 (queimado)
+(6,0) virou 2 (fogo) [acima]
+(5,6) virou 3 (queimado)
+(6,6) virou 2 (fogo) [acima]
+(5,7) virou 2 (fogo) [esquerda]
+(6,1) virou 3 (queimado)
+(7,1) virou 2 (fogo) [acima]
+(6,0) virou 2 (fogo) [direita]
+(6,5) virou 3 (queimado)
+(7,5) virou 2 (fogo) [acima]
+(6,6) virou 2 (fogo) [esquerda]
+(7,2) virou 3 (queimado)
+(7,1) virou 2 (fogo) [direita]
+(7,4) virou 3 (queimado)
+(7,5) virou 2 (fogo) [esquerda]
+
+Matriz após Iteração 6:
+2 3 3 3 3 3 2 1 
+3 3 3 3 3 3 4 2 
+3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 
+3 3 0 3 3 3 3 2 
+2 3 3 3 4 3 2 1 
+1 2 3 3 3 2 1 1 
+
+Iteração 7:
+Animal se moveu de (1,5) para (1,6)
+Animal chegou na água e está salvo!
+Animal salvo!
+
+Resumo da simulação:
+Animal na posição: (1, 6)
+Passos dados: 6
+Animal está vivo.
+
+Matriz final:
+2 3 3 3 3 1 1 1 
+3 3 3 3 3 1 0 1 
+3 3 3 3 3 1 1 1 
+3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 
+3 3 0 3 3 3 3 2 
+2 3 3 3 4 3 2 1 
+1 2 3 3 3 2 1 1 
