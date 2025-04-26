@@ -1,9 +1,7 @@
-
-
 # Trabalho 1 - AEDS
 
 ## 📝 Introdução
-
+                               
 Este trabalho consiste na simulação de um incêndio em uma floresta, onde há um animal que precisa encontrar uma fonte de água para se salvar. A floresta é representada por uma matriz `N x M`, onde cada elemento numérico simboliza um tipo de célula:
 
 - `0`: espaço vazio  
@@ -56,6 +54,8 @@ projeto/
 ├── Makefile             # Compilação e execução
 └── README.md            # Documentação
 ```
+
+### 
 
 ---
 
@@ -138,7 +138,146 @@ Quando essa posição for encontrada, o loop termina e o caminho completo é ret
 
 
 
+[`salvarRota`](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/77b4378e4a045e4b5a4229b87b93474a80dd19eb/src/Animal.cpp#L140-L153)  
+Este método salva a rota começando pela criação de uma pilha, que será o caminho invertido, e uma fila que é a cópia da rota construída no `reconstruirCaminho`. Logo após, cria um loop que continua até a cópia esvaziar. Dentro desse loop, o primeiro elemento da fila é adicionado na pilha, fazendo com que o primeiro elemento da fila se torne o último elemento da pilha. Depois de adicionar, retira esse elemento da fila. Quando todos os elementos da cópia forem adicionados na pilha, começa outro loop que também vai até a pilha esvaziar. Nesse segundo loop, o topo da pilha (que seria o primeiro passo que o animal deveria fazer) é retirado e adicionado corretamente na rota do `mover`.
+
+> Após a criação destes três métodos, o [`calcularRota`](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/77b4378e4a045e4b5a4229b87b93474a80dd19eb/src/Animal.cpp#L77-L91) chama eles na seguinte ordem: define o destino chamando o `bfsAteAgua`, e se não encontrar destino retorna `false`. Se encontrar, chama o `reconstruirCaminho` para criar o caminho e depois o `salvarRota` para organizar os passos. No final, retorna `true`.
+
+[`mover`](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/77b4378e4a045e4b5a4229b87b93474a80dd19eb/src/Animal.cpp#L15-L84)  
+Este é o principal método do animal, onde junta todos os outros métodos para fazer a lógica de movimentação funcionar. Começa verificando se o animal está vivo. Depois, verifica se a rota que foi preenchida no `salvarRota` tem elementos. Se tiver, analisa se o próximo passo da rota está pegando fogo. Este momento é onde é permitido o animal passar por áreas queimadas (`3`), por mais que, na construção da rota (`calcularRota`), ele não pudesse passar por células queimadas. Aqui, se no momento da movimentação a célula virou queimada (depois de calculado o caminho), ele pode seguir, mas não foi feito de propósito.
+
+Depois dessa verificação se ele morreria no fogo, começa um loop que acontece se a rota estiver vazia e ainda houver tentativas de encontrar caminho sobrando. Dentro desse loop, escolhe uma nova posição aleatória para o animal começar. Verifica se foi encontrada alguma posição; se não, encerra. Se encontrar, define `x` e `y` como a nova posição inicial do animal. Em seguida, tenta calcular uma nova rota com `calcularRota`. Se não encontrar caminho, diminui o número de tentativas e recomeça o loop. Se encontrar, sai do loop e segue o código.
+
+Após isso, define `novaX` e `novaY` como os primeiros elementos da nova rota, e já tira esses elementos para preparar o próximo movimento. Atualiza `x` e `y` com o novo passo e incrementa o contador de passos dados pelo animal. Por fim, verifica se a posição atual (`x`, `y`) na matriz é água (`4`). Se for, o animal é considerado salvo, a posição da água vira `0` e é aplicada a umidade ao redor da área com o método `aplicarUmidadeAoRedor`.
 
 
+#### 🔹 `PropagacaoFogo`
+
+[`propagarFogo`](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/77b4378e4a045e4b5a4229b87b93474a80dd19eb/src/PropagacaoFogo.cpp#L6-L43)  
+Este método cria uma cópia da matriz atual e percorre toda a matriz original. Para cada elemento que está pegando fogo (`2`), ele transforma essa célula em árvore queimada (`3`). Em seguida, faz uma verificação dos vizinhos ortogonais. Um elemento vizinho se transforma em fogo (`2`) se for uma árvore saudável (`1`) e:
+- A direção do vento for `'-'` (sem vento), ou
+- A direção permitir a propagação naquele sentido específico.
+
+O trecho que verifica cada direção funciona assim:
+
+```cpp
+if ((i > 0 && matriz[i - 1][j] == 1) && (direcao == '-' || direcao == 'N')) {
+    novaMatriz[i - 1][j] = 2;
+    os << "(" << i - 1 << "," << j << ") virou 2 (fogo) [abaixo]\n";
+}
+if ((i < linhas - 1 && matriz[i + 1][j] == 1) && (direcao == '-' || direcao == 'S')) {
+    novaMatriz[i + 1][j] = 2;
+    os << "(" << i + 1 << "," << j << ") virou 2 (fogo) [acima]\n";
+}
+if ((j > 0 && matriz[i][j - 1] == 1) && (direcao == '-' || direcao == 'L')) {
+    novaMatriz[i][j - 1] = 2;
+    os << "(" << i << "," << j - 1 << ") virou 2 (fogo) [direita]\n";
+}
+if ((j < colunas - 1 && matriz[i][j + 1] == 1) && (direcao == '-' || direcao == 'O')) {
+    novaMatriz[i][j + 1] = 2;
+    os << "(" << i << "," << j + 1 << ") virou 2 (fogo) [esquerda]\n";
+}
+```
+
+---
+
+#### 🔹 `Floresta`
+
+[`simular`](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/77b4378e4a045e4b5a4229b87b93474a80dd19eb/src/Floresta.cpp#L44-L81)  
+No método `simular`, primeiro é verificado se o arquivo de saída foi aberto corretamente. Em seguida, é feito um `resumoInicial` com as informações da matriz (tamanho, direção do vento, etc.). Depois disso, começa um loop controlado pelo número de iterações definido nas variáveis globais do `config.hpp`.
+
+O primeiro passo dentro do loop é mover o animal chamando o método `mover`. Depois, é verificado se o animal já foi salvo, ou se ele morreu ao pisar em uma célula de fogo. Logo após, ocorre a propagação do fogo com o método `propagarFogo`. No final da iteração, é feita a verificação se ainda existe fogo na floresta usando o método `temFogo`.
+
+Se o loop for concluído ou encerrado por alguma dessas condições, é feito o `resumoFinal` com as informações finais da simulação, e o arquivo de saída é fechado.
+
+
+#### 🔹 `main`
+
+O `main` começa inicializando o gerador de números aleatórios usando `srand(time(0))`, para garantir que as posições aleatórias do animal sejam realmente diferentes a cada execução. Depois disso, cria um objeto `Floresta`, que é a classe principal da simulação.
+
+Logo em seguida, chama o método `carregarMatriz`, passando o arquivo `datasets/input.dat`, para carregar todos os dados da floresta, como o tamanho da matriz, a posição inicial do fogo e os elementos dentro da matriz.
+
+Depois que a matriz é carregada, chama o método `simular`, passando o número de iterações (`NUMERO_ITERACOES`) e a direção do vento (`DIRECAO_VENTO`), que são definidos no arquivo `config.hpp`, além do nome do arquivo de saída (`datasets/output.dat`) onde será gravado todo o relatório da simulação.
+
+No final, o `main` retorna `0` para indicar que o programa terminou corretamente.
+
+> Estas são as explicações principais dos principais métodos. Os métodos que faltaram, optei por não fazer uma explicação detalhada por entender que são de fácil entendimento. Porém, se estiver com dificuldade de entender algum método, estou à disposição para explicar.
+---
+
+## 📚 Estudos de Casos
+
+Aqui vamos analisar o resultado da simulação em diferentes matrizes, observando como o sistema se comporta em florestas mais densas, menos densas, maiores e menores. Também serão testadas diferentes direções de vento, além de situações sem vento, para entender o impacto dessas variáveis na propagação do fogo e na fuga do animal.
+
+#### Caso 1
+
+Uma floresta pequena (5x5) pouco densa, com espaço vazio nas bordas, limitando o espalhamento do fogo, sem direção do vento. Ao começar a propagação na posição (1,2), o fogo rapidamente se espalha para os vizinhos possíveis. No final, o fogo fica rodeando a água, mas o animal encontra a água antes que os caminhos se fechem. Após isso, todos os vizinhos ao redor do animal voltam a ser árvores saudáveis devido à aplicação da umidade.
+
+
+
+---
+
+## 🚀 Como Compilar e Executar
+
+Para compilar o projeto, é necessário utilizar o Makefile já configurado na raiz do projeto.
+
+### 📋 Comandos básicos:
+
+1. Para limpar todos os arquivos compilados:
+```bash
+make clean
+```
+Este comando remove todos os arquivos `.o` e o executável antigo que possam estar no projeto.
+
+2. Para compilar o projeto:
+```bash
+make
+```
+Este comando compila todos os arquivos `.cpp` do projeto, gera os objetos na pasta `build/objects/` e cria o executável final `build/app`.
+
+3. Para rodar o programa:
+```bash
+make run
+```
+Este comando executa automaticamente o arquivo `build/app`, carregando o `datasets/input.dat` e gerando a saída em `datasets/output.dat`.
+
+
+
+#### 📂 Sobre os arquivos importantes:
+
+- `datasets/input.dat` → arquivo onde devem ser colocadas as informações iniciais da simulação (tamanho da matriz, posição inicial do fogo e os elementos da floresta).
+
+- `datasets/output.dat` → arquivo onde o programa grava o relatório da simulação, com cada iteração, estado da matriz e resumo final.
+
+- `src/config.hpp` → arquivo onde ficam definidas as variáveis globais:
+  - `NUMERO_ITERACOES`: número máximo de iterações que a simulação vai rodar.
+  - `DIRECAO_VENTO`: define a direção do vento (`'-'` para sem vento, `'N'` para norte, `'S'` para sul, `'L'` para leste, `'O'` para oeste).
+
+---
+
+
+## 📚 Referências
+
+- Material de apoio e enunciado fornecido pelo professor de Algoritmos e Estruturas de Dados (AEDS).
+- Documentação oficial do C++ (https://en.cppreference.com/)
+- Exemplos e teoria sobre algoritmos de busca (BFS) e simulação de propagação de incêndio.
+- Consultas pontuais em fóruns como Stack Overflow para dúvidas específicas sobre C++ e Makefile.
+
+
+
+## 👨‍💻 Autor
+
+- **Jean Pedro de Jesus Oliveira do Nascimento**  
+  Estudante de Engenharia da Computação - CEFET-MG  
+  Técnico em Desenvolvimento de Sistemas - Proz Educação
+
+<p align="left">
+  <a href="https://www.linkedin.com/in/jean-pedro-344356225/" target="_blank">
+    <img align="center" src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn do Jean Pedro" />
+  </a>
+  
+  <a href="mailto:jeanjesuspedrobook@gmail.com">
+    <img align="center" src="https://img.shields.io/badge/Email-D44638?style=for-the-badge&logo=gmail&logoColor=white" alt="Email do Jean Pedro" />
+  </a>
+</p>
 
 
