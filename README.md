@@ -202,6 +202,16 @@ Depois que a matriz é carregada, chama o método `simular`, passando o número 
 No final, o `main` retorna `0` para indicar que o programa terminou corretamente.
 
 > Estas são as explicações principais dos principais métodos. Os métodos que faltaram, optei por não fazer uma explicação detalhada por entender que são de fácil entendimento. Porém, se estiver com dificuldade de entender algum método, estou à disposição para explicar.
+---
+
+## 📚 Estudos de Casos
+
+Aqui vamos analisar o resultado da simulação em diferentes matrizes, observando como o sistema se comporta em florestas mais densas, menos densas, maiores e menores. Também serão testadas diferentes direções de vento, além de situações sem vento, para entender o impacto dessas variáveis na propagação do fogo e na fuga do animal.
+
+#### Caso 1
+
+Uma floresta pequena (5x5) pouco densa, com espaço vazio nas bordas, limitando o espalhamento do fogo, sem direção do vento. Ao começar a propagação na posição (1,2), o fogo rapidamente se espalha para os vizinhos possíveis. No final, o fogo fica rodeando a água, mas o animal encontra a água antes que os caminhos se fechem. Após isso, todos os vizinhos ao redor do animal voltam a ser árvores saudáveis devido à aplicação da umidade.
+
 
 
 ---
