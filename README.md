@@ -1,5 +1,6 @@
 # Trabalho 1 - AEDS
 
+![Animal fugindo do fogo](img/coellho.png)
 
 
 ## 📑 Sumário
