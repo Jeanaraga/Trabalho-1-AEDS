@@ -20,7 +20,7 @@ void Animal::mover(vector<vector<int>> &matriz, ostream &os){
      // Verifica se a próxima posição da rota foi queimada
      if (!rota.empty()) {
           auto [nx, ny] = rota.front();
-          if (matriz[nx][ny] == 2 || matriz[nx][ny] == 3)
+          if (matriz[nx][ny] == 2 )
           {
                os << "Na rota (" << nx << "," << ny << ") encontrou fogo. Animal morreu.\n";
                rota = queue<pair<int, int>>(); // limpa rota
@@ -112,7 +112,7 @@ pair<int, int> Animal::bfsAteAgua(const vector<vector<int>> &matriz,
                int nx = cx + dx;
                int ny = cy + dy;
 
-               if (nx >= 0 && nx < linhas && ny >= 0 && ny < colunas && !visitado[nx][ny] && matriz[nx][ny] != 3) {
+               if (nx >= 0 && nx < linhas && ny >= 0 && ny < colunas && !visitado[nx][ny] && matriz[nx][ny] != 3 && matriz[nx][ny] != 2) {
 
                     visitado[nx][ny] = true;
                     anterior[nx][ny] = {cx, cy};

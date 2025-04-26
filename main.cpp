@@ -6,18 +6,11 @@
 using namespace std;
 
 int main() {
-    srand(time(0)); // inicializa aleatoriedade uma vez só
-
-    // Cria a floresta (posição do animal será definida dinamicamente)
+    srand(time(0));
     Floresta floresta;
 
-    // Carrega a matriz do input.dat
-    if (!floresta.carregarMatriz("datasets/input.dat")) {
-        cerr << "Erro ao carregar o arquivo input.dat\n";
-        return 1;
-    }
 
-    // Executa a simulação
+    floresta.carregarMatriz("datasets/input.dat");
     floresta.simular(NUMERO_ITERACOES,DIRECAO_VENTO, "datasets/output.dat");
 
     
