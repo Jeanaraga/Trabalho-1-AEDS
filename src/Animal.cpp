@@ -182,7 +182,7 @@ pair<int, int> Animal::escolherPosicaoInicialAleatoria(const vector<vector<int>>
 
      for (int i = 0; i < linhas; ++i){
           for (int j = 0; j < colunas; ++j){
-               if (matriz[i][j] == 0) {
+               if (matriz[i][j] == 0 || matriz[i][j] == 1) {
                     posicoesValidas.push_back({i, j});
                }
           }
