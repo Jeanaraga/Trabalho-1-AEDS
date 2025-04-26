@@ -1,9 +1,5 @@
 # Trabalho 1 - AEDS
 
-<p align="center">
-  <img src="img/coelho.png" alt="Animal fugindo do fogo" height="200px">
-</p>
-
 
 
 ## 📑 Sumário
