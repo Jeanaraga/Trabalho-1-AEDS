@@ -1,9 +1,7 @@
-
-
 # Trabalho 1 - AEDS
 
 ## 📝 Introdução
-
+                               
 Este trabalho consiste na simulação de um incêndio em uma floresta, onde há um animal que precisa encontrar uma fonte de água para se salvar. A floresta é representada por uma matriz `N x M`, onde cada elemento numérico simboliza um tipo de célula:
 
 - `0`: espaço vazio  
@@ -56,6 +54,8 @@ projeto/
 ├── Makefile             # Compilação e execução
 └── README.md            # Documentação
 ```
+
+### 
 
 ---
 
@@ -201,8 +201,73 @@ Depois que a matriz é carregada, chama o método `simular`, passando o número 
 
 No final, o `main` retorna `0` para indicar que o programa terminou corretamente.
 
+> Estas são as explicações principais dos principais métodos. Os métodos que faltaram, optei por não fazer uma explicação detalhada por entender que são de fácil entendimento. Porém, se estiver com dificuldade de entender algum método, estou à disposição para explicar.
+
+
+---
+
+## 🚀 Como Compilar e Executar
+
+Para compilar o projeto, é necessário utilizar o Makefile já configurado na raiz do projeto.
+
+### 📋 Comandos básicos:
+
+1. Para limpar todos os arquivos compilados:
+```bash
+make clean
+```
+Este comando remove todos os arquivos `.o` e o executável antigo que possam estar no projeto.
+
+2. Para compilar o projeto:
+```bash
+make
+```
+Este comando compila todos os arquivos `.cpp` do projeto, gera os objetos na pasta `build/objects/` e cria o executável final `build/app`.
+
+3. Para rodar o programa:
+```bash
+make run
+```
+Este comando executa automaticamente o arquivo `build/app`, carregando o `datasets/input.dat` e gerando a saída em `datasets/output.dat`.
+
+
+
+#### 📂 Sobre os arquivos importantes:
+
+- `datasets/input.dat` → arquivo onde devem ser colocadas as informações iniciais da simulação (tamanho da matriz, posição inicial do fogo e os elementos da floresta).
+
+- `datasets/output.dat` → arquivo onde o programa grava o relatório da simulação, com cada iteração, estado da matriz e resumo final.
+
+- `src/config.hpp` → arquivo onde ficam definidas as variáveis globais:
+  - `NUMERO_ITERACOES`: número máximo de iterações que a simulação vai rodar.
+  - `DIRECAO_VENTO`: define a direção do vento (`'-'` para sem vento, `'N'` para norte, `'S'` para sul, `'L'` para leste, `'O'` para oeste).
+
 ---
 
 
+## 📚 Referências
+
+- Material de apoio e enunciado fornecido pelo professor de Algoritmos e Estruturas de Dados (AEDS).
+- Documentação oficial do C++ (https://en.cppreference.com/)
+- Exemplos e teoria sobre algoritmos de busca (BFS) e simulação de propagação de incêndio.
+- Consultas pontuais em fóruns como Stack Overflow para dúvidas específicas sobre C++ e Makefile.
+
+
+
+## 👨‍💻 Autor
+
+- **Jean Pedro de Jesus Oliveira do Nascimento**  
+  Estudante de Engenharia da Computação - CEFET-MG  
+  Técnico em Desenvolvimento de Sistemas - Proz Educação
+
+<p align="left">
+  <a href="https://www.linkedin.com/in/jean-pedro-344356225/" target="_blank">
+    <img align="center" src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn do Jean Pedro" />
+  </a>
+  
+  <a href="mailto:jeanjesuspedrobook@gmail.com">
+    <img align="center" src="https://img.shields.io/badge/Email-D44638?style=for-the-badge&logo=gmail&logoColor=white" alt="Email do Jean Pedro" />
+  </a>
+</p>
 
 
