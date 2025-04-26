@@ -1,5 +1,31 @@
 # Trabalho 1 - AEDS
 
+
+
+## 📑 Sumário
+
+- [Introdução](#-introdução)
+- [Metodologia](#-metodologia)
+- [Detalhamento dos Principais Métodos](#-detalhamento-dos-principais-métodos)
+  - [Animal](#-animal)
+    - [bfsAteAgua](#bfstateagua)
+    - [reconstruirCaminho](#reconstruircaminho)
+    - [salvarRota](#salvarrota)
+    - [mover](#mover)
+  - [PropagacaoFogo](#-propagacaofogo)
+  - [Floresta](#-floresta)
+  - [Main](#-main)
+- [Estudos de Caso](#-estudos-de-caso)
+  - [Caso 1](#caso-1)
+  - [Caso 2](#caso-2)
+  - [Caso 3](#caso-3)
+- [Como Compilar e Executar](#-como-compilar-e-executar)
+- [Conclusão](#-conclusão)
+- [Referências](#-referências)
+- [Autor](#-autor)
+
+---
+
 ## 📝 Introdução
                                
 Este trabalho consiste na simulação de um incêndio em uma floresta, onde há um animal que precisa encontrar uma fonte de água para se salvar. A floresta é representada por uma matriz `N x M`, onde cada elemento numérico simboliza um tipo de célula:
@@ -281,6 +307,15 @@ Arquivo: `input_caso3.dat`
 [Verifique o resultado aqui](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/main/casos_testes/output_caso3.dat)
 
 ---
+
+## Conclusão
+
+O projeto de simulação de incêndio florestal com movimentação de um animal foi concluído com sucesso, atingindo todos os objetivos propostos. Foi possível implementar a propagação do fogo respeitando as regras de direção do vento e também o movimento inteligente do animal usando busca em largura (BFS) para encontrar o caminho até a água.
+
+Durante o desenvolvimento, surgiram desafios como a necessidade de recalcular rotas quando o fogo mudava o ambiente e o controle de tentativas limitadas para encontrar um novo caminho, o que exigiu um bom planejamento de lógica e estruturas de dados.
+
+A simulação se mostrou fiel à proposta inicial, permitindo observar diferentes comportamentos do sistema em variados cenários.
+
 
 ## 🚀 Como Compilar e Executar
 
