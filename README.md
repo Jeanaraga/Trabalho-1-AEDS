@@ -113,14 +113,30 @@ Possui apenas **dois métodos**:
 
 ### Detalhamento dos Principais Métodos
 
-
 > Logo abaixo, farei uma explicação mais detalhada dos métodos mais importantes das classes que envolvem a lógica da simulação.
-> 
 
-Animal
+#### 🔹 `Animal`
 
-[`bfsAteAgua(...)`](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/77b4378e4a045e4b5a4229b87b93474a80dd19eb/src/Animal.cpp#L93-L125)
-primero pega o tamanho da matriz, cria a fila do bfs, e define que a posicao que o animal esta foi visitada. logo apos cria um loop que enquanto a fila estiver item ela vai ocorer, dentro deste loop pega a posicao do animal cx,cy, retira da fila, verifica se a posicao do animal tem agua,se tiver retorna a posicao, apos a verificação defini as posicao ortogonais, cria um loop com todos ate acabar as posicoes, dentro deste loop calculo a posicao do vizinho com a soma do animal mas os ortogonais, faz uma verificao se esta dentro do limite da matriz, e se 
+[`bfsAteAgua(...)`](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/77b4378e4a045e4b5a4229b87b93474a80dd19eb/src/Animal.cpp#L93-L125)  
+Esse método começa pegando o tamanho da matriz, criando a fila para o algoritmo BFS e marcando a posição inicial do animal como visitada. Em seguida, inicia um loop que continua enquanto houver elementos na fila.
+
+Dentro do loop, ele pega a posição atual (`cx`, `cy`) do animal e a remove da fila. Verifica se a célula atual contém água; se sim, retorna essa posição como destino.
+
+Caso contrário, define as quatro direções ortogonais e percorre todas elas. Para cada direção, calcula a nova posição (`nx`, `ny`) somando as coordenadas atuais com a direção.
+
+Antes de continuar, o código verifica se essa nova posição está dentro dos limites da matriz, se ainda não foi visitada e se o tipo da célula permite passagem (ou seja, não é fogo). Se todas essas condições forem verdadeiras, a posição é marcada como visitada, o vetor `anterior` armazena a posição anterior do animal, e essa nova posição é colocada na fila para continuar a busca.
+
+Se nenhuma célula com água for encontrada ao final da busca, o método retorna `{-1, -1}` indicando falha na rota.
+
+
+[`reconstruirCaminho(...)`](https://github.com/Jeanaraga/Trabalho-1-AEDS/blob/77b4378e4a045e4b5a4229b87b93474a80dd19eb/src/Animal.cpp#L127-L138) 
+A reconstrução do caminho começa criando uma fila para armazenar o trajeto e definindo a variável atual como sendo o destino encontrado pelo BFS. Em seguida, é iniciado um loop que só termina quando atual for igual a {-1, -1}. Dentro desse loop, a posição atual é adicionada à fila do caminho, e depois a variável atual é atualizada com a posição anterior, que é obtida a partir da matriz anterior preenchida durante o BFS.
+
+*Durante a execução do BFS, a cada célula nova que o algoritmo visita, ele salva na matriz anterior a posição de onde veio. Por exemplo, se o animal chegou na posição (5,6) a partir de (5,5), o código vai definir que anterior[5][6] = {5,5}. Assim, quando for reconstruir o caminho, o código vai seguir de (5,6) para (5,5), depois para a posição anterior a essa, e assim por diante, até chegar na posição inicial, que foi definida com {-1, -1}.*
+
+Quando essa posição for encontrada, o loop termina e o caminho completo é retornado.
+
+
 
 
 
